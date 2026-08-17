@@ -8,12 +8,18 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Dependency directories
-node_modules
-dist
-dist-ssr
-build
-out
-.next
+node_modules/
+jspm_packages/
+web_modules/
+
+# Production & Build outputs
+dist/
+dist-ssr/
+build/
+out/
+.next/
+.vite/
+.output/
 
 # Local Environment Files
 .env
@@ -23,16 +29,18 @@ out
 .env.production.local
 *.local
 
-# Editor & IDE directories
+# Editor & IDE configurations
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
-.idea
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.sublime-project
+*.sublime-workspace
 
 # OS Generated Files
 .DS_Store
@@ -42,14 +50,16 @@ out
 .Trashes
 ehthumbs.db
 Thumbs.db
+[Dd]esktop.ini
 
-# Testing and coverage
-coverage
-.nyc_output
+# Testing & Coverage
+coverage/
+.nyc_output/
 
-# Temporary scratch & build artifacts
-.cache
-.parcel-cache
-.eslintcache
-.temp
-.tmp
+# Cache, Scratch & TypeScript Build Info
+.cache/
+.parcel-cache/
+.eslintcache/
+.temp/
+.tmp/
+*.tsbuildinfo

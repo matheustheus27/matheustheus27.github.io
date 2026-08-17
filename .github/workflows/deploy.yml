@@ -2,7 +2,8 @@ name: Deploy GlassHub to GitHub Pages
 
 on:
   push:
-    branches: ['main']
+    branches: ['main'] # Substitua por 'master' se sua branch principal for master
+
   workflow_dispatch:
 
 permissions:
@@ -27,7 +28,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: 'npm'
 
       - name: Install dependencies
@@ -38,8 +39,6 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

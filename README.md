@@ -33,7 +33,7 @@
 
 ---
 
-[🌐 Live Demo](http://localhost:5173/) •
+[🌐 Live Demo](https://matheustheus27.github.io/) •
 [🔮 The Philosophy](#-the-glasshub-philosophy) •
 [✨ Features](#-features--modules) •
 [🏗️ Architecture](#-project-architecture) •

@@ -12,19 +12,20 @@ export interface IProjectItem {
   demoUrl?: string;
   accentColor: 'cyan' | 'violet' | 'blue' | 'emerald';
   metrics?: { label: string; value: string }[];
+  isComingSoon?: boolean;
 }
 
 export const projectsDataPt: IProjectItem[] = [
   {
-    id: 'glassmorphic-resume',
-    title: 'Glassmorphic Professional Resume',
+    id: 'glasshub-resume',
+    title: 'GlassHub Professional Resume',
     tagline: 'Construtor moderno de currículos com preview dinâmico e exportação em PDF.',
     description:
       'Aplicação web com estética glassmorphic que permite aos desenvolvedores estruturarem currículos profissionais com customização em tempo real e renderização vetorial de PDF de alta fidelidade.',
     category: 'webapp',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'PDF Engine', 'Glassmorphism'],
     featured: true,
-    repoUrl: 'https://github.com/matheustheus27/GlassmorphicProfessionalResume',
+    repoUrl: 'https://github.com/matheustheus27/GlassHubProfessionalResume',
     accentColor: 'cyan',
     metrics: [
       { label: 'Exportação', value: 'PDF Vector' },
@@ -32,35 +33,68 @@ export const projectsDataPt: IProjectItem[] = [
     ],
   },
   {
-    id: 'docshell',
-    title: 'DocShell',
-    tagline: 'Motor e utilitário estruturado para geração e manipulação ágil de documentações.',
+    id: 'glasshub-engine',
+    title: 'GlassHub Engine',
+    tagline: 'Motor autônomo de métricas, telemetria e linguagens com visualização glassmorphic.',
     description:
-      'Ferramenta CLI e framework leve para padronizar, versionar e compilar documentações técnicas de software com suporte a templates modulares e automação de pipelines.',
+      'Substituto moderno para os utilitários de estatísticas do GitHub, fornecendo cartões vetoriais translúcidos de alta precisão e análise de repositórios em tempo real.',
     category: 'devtools',
-    tags: ['TypeScript', 'CLI', 'Documentation Engine', 'Automation', 'DevTools'],
+    tags: ['TypeScript', 'GitHub API', 'Metrics Engine', 'SVG Renderer', 'DevTools'],
     featured: true,
-    repoUrl: 'https://github.com/matheustheus27/DocShell',
-    accentColor: 'violet',
+    repoUrl: 'https://github.com/matheustheus27/GlassHubEngine',
+    accentColor: 'cyan',
     metrics: [
-      { label: 'DX', value: 'Instant CLI' },
-      { label: 'Pipelines', value: 'Automação' },
+      { label: 'Telemetry', value: 'Live GitHub Stats' },
+      { label: 'Format', value: 'Vector SVG / Glass' },
     ],
   },
   {
-    id: 'native-zip-tools',
-    title: 'NativeZipTools',
-    tagline: 'Toolkit de alta performance para manipulação e extração de arquivos ZIP.',
+    id: 'glasshub-docshell',
+    title: 'GlassHub DocShell',
+    tagline: 'Motor CLI multilinguagem (Shell Script / PowerShell) para geração de documentações web (Python, PHP, JS) e PDF.',
     description:
-      'Utilitário em C# focado em manipulação direta de streams de I/O e compressão/descompressão nativa com zero dependências externas e máximo throughput.',
+      'Utilitário CLI construído em Shell Script e PowerShell para padronizar, compilar e gerar documentações técnicas interativas em formatos web (suportando ecossistemas Python, PHP e JavaScript) e exportação em PDF. Projetado para automação ágil em pipelines de CI/CD.',
     category: 'devtools',
-    tags: ['C#', '.NET', 'System Utilities', 'I/O Streams', 'Compression'],
+    tags: ['Shell Script', 'PowerShell', 'Web Docs (Python/PHP/JS)', 'PDF Generator', 'Documentation Engine', 'DevTools'],
     featured: true,
-    repoUrl: 'https://github.com/matheustheus27/NativeZipTools',
+    repoUrl: 'https://github.com/matheustheus27/GlassHubDocShell',
+    accentColor: 'violet',
+    metrics: [
+      { label: 'CLI Core', value: 'Shell & PowerShell' },
+      { label: 'Formatos', value: 'Web & PDF' },
+    ],
+  },
+  {
+    id: 'glasshub-eventhorizon',
+    title: 'GlassHub EventHorizon',
+    tagline: 'Toolkit de alta performance para manipulação e compressão contínua em streams cósmicas.',
+    description:
+      'Utilitário nativo em C# focado no horizonte de eventos de I/O, processamento direto de streams e compressão/descompressão de dados com zero dependências externas.',
+    category: 'devtools',
+    tags: ['C#', '.NET', 'Cosmic Streams', 'System Utilities', 'Compression'],
+    featured: true,
+    repoUrl: 'https://github.com/matheustheus27/GlassHubEventHorizon',
     accentColor: 'blue',
     metrics: [
       { label: 'Dependências', value: '0 (Nativo)' },
-      { label: 'I/O Performance', value: 'Direto em Streams' },
+      { label: 'Throughput', value: 'Direct I/O' },
+    ],
+  },
+  {
+    id: 'glasshub-saltus',
+    title: 'GlassHub Saltus',
+    tagline: 'Mensageiro descentralizado de alta privacidade construído nativamente em Kotlin para Android.',
+    description:
+      'Plataforma de comunicação descentralizada, P2P e de alta privacidade com criptografia de ponta a ponta, roteamento anônimo e zero retenção de metadados, inicialmente disponível para Android. Atualmente em fase final de testes de engenharia e validação de nós da rede.',
+    category: 'webapp',
+    tags: ['Kotlin', 'Android', 'Decentralized Messaging', 'P2P Network', 'End-to-End Encryption', 'Privacy First'],
+    featured: true,
+    repoUrl: '#',
+    accentColor: 'violet',
+    isComingSoon: true,
+    metrics: [
+      { label: 'Plataforma', value: 'Kotlin (Android)' },
+      { label: 'Status', value: 'Testes de Engenharia' },
     ],
   },
   {
@@ -71,7 +105,7 @@ export const projectsDataPt: IProjectItem[] = [
       'Projeto autoral em C# e Unity Engine com foco em arquitetura de mecânicas, física customizada, level design e inteligência artificial de entidades, desenvolvido sob liderança técnica na Commit Jr.',
     category: 'games',
     tags: ['C#', 'Unity Engine', 'Game Architecture', 'Commit Jr.', 'Physics'],
-    featured: true,
+    featured: false,
     repoUrl: 'https://github.com/CommitJr/bubble',
     accentColor: 'emerald',
     metrics: [
@@ -79,43 +113,19 @@ export const projectsDataPt: IProjectItem[] = [
       { label: 'Engine', value: 'Unity & C#' },
     ],
   },
-  {
-    id: 'earth-defenders',
-    title: 'Earth Defenders — Shmups Game',
-    tagline: 'Jogo estilo Shoot em up clássico com algoritmos de renderização de games.',
-    description:
-      'Implementação de jogo arcade espacial explorando algoritmos de movimentação de projéteis, pooling de objetos em memória e detecção de colisão eficiente.',
-    category: 'games',
-    tags: ['Game Dev', 'Algorithms', 'Arcade', 'Object Pooling', 'Render'],
-    featured: false,
-    repoUrl: 'https://github.com/matheustheus27/EarthDefenders-ShmupsGame',
-    accentColor: 'cyan',
-  },
-  {
-    id: 'solar-system-simulator',
-    title: 'Solar System — Low Level Simulator',
-    tagline: 'Simulador gravitacional do sistema solar focado em performance matemática.',
-    description:
-      'Simulação de física orbital em baixo nível calculando forças gravitacionais de N-corpos e órbitas celestes com foco em precisão numérica e uso eficiente de memória.',
-    category: 'games',
-    tags: ['Low-Level', 'Physics', 'N-Body Simulation', 'Mathematics', 'Simulation'],
-    featured: false,
-    repoUrl: 'https://github.com/matheustheus27/SolarSystem-Low-Level-Simulator',
-    accentColor: 'violet',
-  },
 ];
 
 export const projectsDataEn: IProjectItem[] = [
   {
-    id: 'glassmorphic-resume',
-    title: 'Glassmorphic Professional Resume',
+    id: 'glasshub-resume',
+    title: 'GlassHub Professional Resume',
     tagline: 'Modern resume builder with dynamic live preview and high-fidelity PDF export.',
     description:
       'A glassmorphic web application empowering developers to architect polished resumes with real-time customization and vector-quality PDF rendering.',
     category: 'webapp',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'PDF Engine', 'Glassmorphism'],
     featured: true,
-    repoUrl: 'https://github.com/matheustheus27/GlassmorphicProfessionalResume',
+    repoUrl: 'https://github.com/matheustheus27/GlassHubProfessionalResume',
     accentColor: 'cyan',
     metrics: [
       { label: 'Export', value: 'Vector PDF' },
@@ -123,35 +133,68 @@ export const projectsDataEn: IProjectItem[] = [
     ],
   },
   {
-    id: 'docshell',
-    title: 'DocShell',
-    tagline: 'Structured engine and CLI utility for agile documentation generation.',
+    id: 'glasshub-engine',
+    title: 'GlassHub Engine',
+    tagline: 'Autonomous telemetry and language metrics engine with glassmorphic visualization.',
     description:
-      'Lightweight CLI tool and framework to standardize, version, and compile technical software documentation with modular template and pipeline support.',
+      'A modern substitute for GitHub statistics cards, rendering high-precision translucent vector cards and real-time repository analytics.',
     category: 'devtools',
-    tags: ['TypeScript', 'CLI', 'Documentation Engine', 'Automation', 'DevTools'],
+    tags: ['TypeScript', 'GitHub API', 'Metrics Engine', 'SVG Renderer', 'DevTools'],
     featured: true,
-    repoUrl: 'https://github.com/matheustheus27/DocShell',
-    accentColor: 'violet',
+    repoUrl: 'https://github.com/matheustheus27/GlassHubEngine',
+    accentColor: 'cyan',
     metrics: [
-      { label: 'DX', value: 'Instant CLI' },
-      { label: 'Pipelines', value: 'Automation' },
+      { label: 'Telemetry', value: 'Live GitHub Stats' },
+      { label: 'Format', value: 'Vector SVG / Glass' },
     ],
   },
   {
-    id: 'native-zip-tools',
-    title: 'NativeZipTools',
-    tagline: 'High-throughput toolkit for stream-level ZIP archive manipulation.',
+    id: 'glasshub-docshell',
+    title: 'GlassHub DocShell',
+    tagline: 'Multilanguage CLI engine (Shell Script / PowerShell) for generating web (Python, PHP, JS) and PDF docs.',
     description:
-      'C# utility focused on direct I/O stream processing and native compression/decompression with zero external dependencies.',
+      'CLI utility built with Shell Script and PowerShell to standardize, compile, and generate interactive technical documentation in web formats (supporting Python, PHP, and JavaScript projects) alongside PDF export. Engineered for agile CI/CD pipeline automation.',
     category: 'devtools',
-    tags: ['C#', '.NET', 'System Utilities', 'I/O Streams', 'Compression'],
+    tags: ['Shell Script', 'PowerShell', 'Web Docs (Python/PHP/JS)', 'PDF Generator', 'Documentation Engine', 'DevTools'],
     featured: true,
-    repoUrl: 'https://github.com/matheustheus27/NativeZipTools',
+    repoUrl: 'https://github.com/matheustheus27/GlassHubDocShell',
+    accentColor: 'violet',
+    metrics: [
+      { label: 'CLI Core', value: 'Shell & PowerShell' },
+      { label: 'Formats', value: 'Web & PDF' },
+    ],
+  },
+  {
+    id: 'glasshub-eventhorizon',
+    title: 'GlassHub EventHorizon',
+    tagline: 'High-throughput toolkit for continuous cosmic stream processing and compression.',
+    description:
+      'Native C# utility engineered for event horizon I/O, direct stream manipulation, and data compression with zero external dependencies.',
+    category: 'devtools',
+    tags: ['C#', '.NET', 'Cosmic Streams', 'System Utilities', 'Compression'],
+    featured: true,
+    repoUrl: 'https://github.com/matheustheus27/GlassHubEventHorizon',
     accentColor: 'blue',
     metrics: [
       { label: 'Dependencies', value: '0 (Native)' },
-      { label: 'I/O Performance', value: 'Direct Stream' },
+      { label: 'Throughput', value: 'Direct I/O' },
+    ],
+  },
+  {
+    id: 'glasshub-saltus',
+    title: 'GlassHub Saltus',
+    tagline: 'Decentralized high-privacy messenger built natively in Kotlin for Android.',
+    description:
+      'Decentralized, P2P high-privacy communication platform featuring end-to-end encryption, anonymous routing, and zero metadata retention, initially available for Android. Currently undergoing final engineering tests and network node validation.',
+    category: 'webapp',
+    tags: ['Kotlin', 'Android', 'Decentralized Messaging', 'P2P Network', 'End-to-End Encryption', 'Privacy First'],
+    featured: true,
+    repoUrl: '#',
+    accentColor: 'violet',
+    isComingSoon: true,
+    metrics: [
+      { label: 'Platform', value: 'Kotlin (Android)' },
+      { label: 'Status', value: 'Engineering Testing' },
     ],
   },
   {
@@ -162,37 +205,13 @@ export const projectsDataEn: IProjectItem[] = [
       'Original C# and Unity Engine project exploring mechanics architecture, custom physics, level design, and entity AI, developed under technical leadership at Commit Jr.',
     category: 'games',
     tags: ['C#', 'Unity Engine', 'Game Architecture', 'Commit Jr.', 'Physics'],
-    featured: true,
+    featured: false,
     repoUrl: 'https://github.com/CommitJr/bubble',
     accentColor: 'emerald',
     metrics: [
       { label: 'Junior Enterprise', value: 'Commit Jr.' },
       { label: 'Engine', value: 'Unity & C#' },
     ],
-  },
-  {
-    id: 'earth-defenders',
-    title: 'Earth Defenders — Shmups Game',
-    tagline: 'Classic Shoot em up arcade game engineered with custom game render loops.',
-    description:
-      'Space shooter arcade game implementation exploring ballistic kinematics, memory object pooling, and high-efficiency collision algorithms.',
-    category: 'games',
-    tags: ['Game Dev', 'Algorithms', 'Arcade', 'Object Pooling', 'Render'],
-    featured: false,
-    repoUrl: 'https://github.com/matheustheus27/EarthDefenders-ShmupsGame',
-    accentColor: 'cyan',
-  },
-  {
-    id: 'solar-system-simulator',
-    title: 'Solar System — Low Level Simulator',
-    tagline: 'N-body gravitational orbital simulator focused on mathematical precision.',
-    description:
-      'Low-level orbital physics simulator computing celestial N-body gravitational forces and orbital paths with numerical precision and memory optimization.',
-    category: 'games',
-    tags: ['Low-Level', 'Physics', 'N-Body Simulation', 'Mathematics', 'Simulation'],
-    featured: false,
-    repoUrl: 'https://github.com/matheustheus27/SolarSystem-Low-Level-Simulator',
-    accentColor: 'violet',
   },
 ];
 

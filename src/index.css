@@ -24,4 +24,30 @@
       scroll-behavior: auto !important;
     }
   }
+
+  /* Otimização de Impressão e Exportação Vetorial de PDF */
+  @media print {
+    body {
+      background: white !important;
+      color: #0f172a !important;
+    }
+    nav, footer, aside, button, canvas, .no-print {
+      display: none !important;
+    }
+    article {
+      color: #0f172a !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: #0f172a !important;
+      background: none !important;
+      -webkit-text-fill-color: initial !important;
+    }
+    pre, code {
+      background: #f1f5f9 !important;
+      color: #0f172a !important;
+      border: 1px solid #cbd5e1 !important;
+    }
+  }
 }

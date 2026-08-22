@@ -1,3 +1,5 @@
+import { IArticleItem } from '../data/articles.data';
+
 export type Language = 'pt-BR' | 'en-US';
 
 export interface TrajectoryMilestone {
@@ -122,14 +124,18 @@ export interface Translations {
     readAction: string;
     modalClose: string;
     modalAction: string;
-    items: {
-      id: string;
-      title: string;
-      summary: string;
-      publishedAt: string;
-      readTime: string;
-      tags: string[];
-    }[];
+    backToList: string;
+    authorLabel: string;
+    publishedOn: string;
+    updatedOn: string;
+    shareArticle: string;
+    linkCopied: string;
+    referencesTitle: string;
+    referencesSubtitle: string;
+    readNextTitle: string;
+    readNextSubtitle: string;
+    readNextAction: string;
+    items: IArticleItem[];
   };
   contributions: {
     badge: string;

@@ -37,6 +37,9 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Create 404 fallback for GitHub Pages SPA Routing
+        run: cp ./dist/index.html ./dist/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

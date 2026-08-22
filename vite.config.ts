@@ -14,5 +14,20 @@ export default defineConfig({
     port: 5173,
     host: true,
   },
-  base: '/',
+  base: './',
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    minify: 'esbuild',
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'framer-motion': ['framer-motion'],
+          'lucide-icons': ['lucide-react'],
+        },
+      },
+    },
+  },
 });

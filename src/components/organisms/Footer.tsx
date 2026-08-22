@@ -7,9 +7,10 @@ import { useLanguage } from '../../context/LanguageContext';
 
 interface FooterProps {
   socials: ISocialLink[];
+  onNavigateSection?: (sectionId?: string) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ socials }) => {
+export const Footer: React.FC<FooterProps> = ({ socials, onNavigateSection }) => {
   const { t } = useLanguage();
   const footer = t.footer;
 
@@ -25,6 +26,19 @@ export const Footer: React.FC<FooterProps> = ({ socials }) => {
     { id: 'articles', label: t.nav.articles, href: '#articles' },
     { id: 'contributions', label: t.nav.contributions, href: '#contributions' },
   ];
+
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    const sectionId = href.replace('#', '');
+    if (onNavigateSection) {
+      onNavigateSection(sectionId);
+    } else {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <footer className="relative z-10 bg-slate-950/90 border-t border-white/10 pt-16 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden backdrop-blur-2xl">
@@ -65,7 +79,8 @@ export const Footer: React.FC<FooterProps> = ({ socials }) => {
                 <li key={item.id}>
                   <a
                     href={item.href}
-                    className="text-slate-400 hover:text-cyan-300 transition-colors inline-block"
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className="text-slate-400 hover:text-cyan-300 transition-colors inline-block cursor-pointer"
                   >
                     {item.label}
                   </a>

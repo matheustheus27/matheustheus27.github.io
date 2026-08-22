@@ -80,6 +80,106 @@ export const AboutGlassHubSection: React.FC = () => {
           </GlassCard>
         </div>
 
+        {/* GlassHub Interactive Ecosystem Blueprint Diagram */}
+        <div className="max-w-5xl mx-auto mb-16 p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-white/10 backdrop-blur-xl relative overflow-hidden">
+          <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div>
+              <Badge variant="violet" dot size="sm" className="mb-1">
+                Ecosystem Blueprint
+              </Badge>
+              <Heading level="h3" className="text-white text-xl">
+                Arquitetura Integrada do Ecossistema GlassHub
+              </Heading>
+            </div>
+            <span className="text-xs text-slate-400 font-mono hidden sm:inline-block">
+              5 Módulos Autônomos & Desacoplados
+            </span>
+          </div>
+
+          {/* Interactive Nodes Flow Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative z-10">
+            {/* Node 1: Resume */}
+            <div className="p-4 rounded-2xl bg-cyan-950/30 border border-cyan-500/30 hover:border-cyan-400/60 transition-all flex flex-col justify-between group">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] font-mono font-semibold text-cyan-400 bg-cyan-500/20 px-2 py-0.5 rounded-full">
+                  WEB UI
+                </span>
+                <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
+              </div>
+              <h4 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors mb-1">
+                GlassHub Resume
+              </h4>
+              <p className="text-xs text-slate-400 leading-tight">
+                Preview dinâmico em tempo real & exportação vetorial PDF.
+              </p>
+            </div>
+
+            {/* Node 2: Engine */}
+            <div className="p-4 rounded-2xl bg-purple-950/30 border border-purple-500/30 hover:border-purple-400/60 transition-all flex flex-col justify-between group">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] font-mono font-semibold text-purple-400 bg-purple-500/20 px-2 py-0.5 rounded-full">
+                  METRICS
+                </span>
+                <Atom className="w-3.5 h-3.5 text-purple-300" />
+              </div>
+              <h4 className="text-sm font-bold text-white group-hover:text-purple-300 transition-colors mb-1">
+                GlassHub Engine
+              </h4>
+              <p className="text-xs text-slate-400 leading-tight">
+                Motor de estatísticas & telemetria em tempo real.
+              </p>
+            </div>
+
+            {/* Node 3: DocShell */}
+            <div className="p-4 rounded-2xl bg-indigo-950/30 border border-indigo-500/30 hover:border-indigo-400/60 transition-all flex flex-col justify-between group">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] font-mono font-semibold text-indigo-400 bg-indigo-500/20 px-2 py-0.5 rounded-full">
+                  CLI & DOCS
+                </span>
+                <Boxes className="w-3.5 h-3.5 text-indigo-300" />
+              </div>
+              <h4 className="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors mb-1">
+                GlassHub DocShell
+              </h4>
+              <p className="text-xs text-slate-400 leading-tight">
+                Geração CLI de documentações Web (Py/PHP/JS) & PDF.
+              </p>
+            </div>
+
+            {/* Node 4: EventHorizon */}
+            <div className="p-4 rounded-2xl bg-blue-950/30 border border-blue-500/30 hover:border-blue-400/60 transition-all flex flex-col justify-between group">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] font-mono font-semibold text-blue-400 bg-blue-500/20 px-2 py-0.5 rounded-full">
+                  C# STREAMS
+                </span>
+                <Flame className="w-3.5 h-3.5 text-blue-300" />
+              </div>
+              <h4 className="text-sm font-bold text-white group-hover:text-blue-300 transition-colors mb-1">
+                EventHorizon
+              </h4>
+              <p className="text-xs text-slate-400 leading-tight">
+                Processamento contínuo em streams I/O nativas.
+              </p>
+            </div>
+
+            {/* Node 5: Saltus */}
+            <div className="p-4 rounded-2xl bg-fuchsia-950/30 border border-fuchsia-500/30 hover:border-fuchsia-400/60 transition-all flex flex-col justify-between group">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] font-mono font-semibold text-fuchsia-400 bg-fuchsia-500/20 px-2 py-0.5 rounded-full">
+                  KOTLIN P2P
+                </span>
+                <ShieldCheck className="w-3.5 h-3.5 text-fuchsia-300" />
+              </div>
+              <h4 className="text-sm font-bold text-white group-hover:text-fuchsia-300 transition-colors mb-1">
+                GlassHub Saltus
+              </h4>
+              <p className="text-xs text-slate-400 leading-tight">
+                Mensageiro descentralizado & privacidade Android.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Pillars Preview Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {aboutHub.pillars.map((pillar) => (

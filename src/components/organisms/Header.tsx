@@ -8,9 +8,10 @@ import { useLanguage } from '../../context/LanguageContext';
 
 interface HeaderProps {
   onOpenContribution?: () => void;
+  onNavigateSection?: (sectionId?: string) => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenContribution }) => {
+export const Header: React.FC<HeaderProps> = ({ onOpenContribution, onNavigateSection }) => {
   const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,6 +25,19 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContribution }) => {
     { id: 'articles', label: t.nav.articles, href: '#articles' },
     { id: 'contributions', label: t.nav.contributions, href: '#contributions' },
   ];
+
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    const sectionId = href.replace('#', '');
+    if (onNavigateSection) {
+      onNavigateSection(sectionId);
+    } else {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,6 +75,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContribution }) => {
         {/* Logo GlassHub */}
         <a
           href="#hero"
+          onClick={(e) => handleNavClick(e, '#hero')}
           className="group flex items-center gap-2.5 select-none focus:outline-none"
         >
           <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500/20 via-indigo-500/20 to-purple-500/20 border border-cyan-500/40 group-hover:border-cyan-400/80 shadow-glass-sm group-hover:shadow-glow-cyan transition-all duration-300 backdrop-blur-md">
@@ -91,6 +106,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContribution }) => {
               label={item.label}
               href={item.href}
               isActive={activeSection === item.id}
+              onClick={() => {
+                if (onNavigateSection) {
+                  onNavigateSection(item.id);
+                }
+              }}
             />
           ))}
         </nav>
@@ -103,7 +123,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContribution }) => {
             variant="glow-primary"
             size="sm"
             href="#contributions"
-            onClick={onOpenContribution}
+            onClick={(e) => {
+              e?.preventDefault();
+              if (onOpenContribution) onOpenContribution();
+              if (onNavigateSection) onNavigateSection('contributions');
+            }}
             leftIcon={<Heart className="w-3.5 h-3.5 fill-current text-purple-200" />}
           >
             {t.nav.supportBtn}
@@ -141,7 +165,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContribution }) => {
                   label={item.label}
                   href={item.href}
                   isActive={activeSection === item.id}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    if (onNavigateSection) {
+                      onNavigateSection(item.id);
+                    }
+                  }}
                 />
               ))}
             </div>
@@ -151,9 +180,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContribution }) => {
                 variant="glow-primary"
                 size="md"
                 href="#contributions"
-                onClick={() => {
+                onClick={(e) => {
+                  e?.preventDefault();
                   setMobileMenuOpen(false);
                   if (onOpenContribution) onOpenContribution();
+                  if (onNavigateSection) onNavigateSection('contributions');
                 }}
                 leftIcon={<Heart className="w-4 h-4 fill-current text-purple-200" />}
                 className="w-full justify-center"

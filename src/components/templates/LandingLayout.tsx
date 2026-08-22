@@ -7,11 +7,13 @@ import { ISocialLink } from '../../types';
 interface LandingLayoutProps {
   children: React.ReactNode;
   socials: ISocialLink[];
+  onNavigateSection?: (sectionId?: string) => void;
 }
 
 export const LandingLayout: React.FC<LandingLayoutProps> = ({
   children,
   socials,
+  onNavigateSection,
 }) => {
   return (
     <div className="relative min-h-screen bg-cosmic-950 text-slate-100 flex flex-col selection:bg-cyan-500/30 selection:text-cyan-300">
@@ -19,7 +21,7 @@ export const LandingLayout: React.FC<LandingLayoutProps> = ({
       <CosmicBackground />
 
       {/* Sticky Glassmorphic Header */}
-      <Header />
+      <Header onNavigateSection={onNavigateSection} />
 
       {/* Main Page Content */}
       <main className="flex-1 w-full relative z-10">
@@ -27,7 +29,7 @@ export const LandingLayout: React.FC<LandingLayoutProps> = ({
       </main>
 
       {/* Cosmic Footer */}
-      <Footer socials={socials} />
+      <Footer socials={socials} onNavigateSection={onNavigateSection} />
     </div>
   );
 };

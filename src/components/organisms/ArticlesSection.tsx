@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Newspaper, Clock, Calendar, ArrowRight, ArrowUpRight, BookOpen } from 'lucide-react';
+import { Newspaper, Clock, Calendar, ArrowRight, ArrowUpRight, BookOpen, Search, Sparkles } from 'lucide-react';
 import { Heading } from '../atoms/Heading';
 import { Text } from '../atoms/Text';
 import { Badge } from '../atoms/Badge';
@@ -8,19 +8,50 @@ import { GlassCard } from '../atoms/GlassCard';
 import { GlassModal } from '../atoms/GlassModal';
 import { useLanguage } from '../../context/LanguageContext';
 
-export const ArticlesSection: React.FC = () => {
+interface ArticlesSectionProps {
+  onSelectArticle?: (slug: string) => void;
+}
+
+export const ArticlesSection: React.FC<ArticlesSectionProps> = ({ onSelectArticle }) => {
   const { t } = useLanguage();
   const [activeArticleIndex, setActiveArticleIndex] = useState<number | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedTag, setSelectedTag] = useState('all');
+
   const articlesData = t.articles;
+
+  // Extract unique tags for filter pills
+  const availableTags = Array.from(
+    new Set(articlesData.items.flatMap((item) => item.tags))
+  ).slice(0, 6);
+
+  const filteredArticles = articlesData.items.filter((article) => {
+    const matchesSearch =
+      searchQuery.trim() === '' ||
+      article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      article.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      article.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    const matchesTag =
+      selectedTag === 'all' || article.tags.includes(selectedTag);
+
+    return matchesSearch && matchesTag;
+  });
 
   const activeArticle =
     activeArticleIndex !== null ? articlesData.items[activeArticleIndex] : null;
+
+  const handleOpenArticle = (slug: string) => {
+    if (onSelectArticle) {
+      onSelectArticle(slug);
+    }
+  };
 
   return (
     <section id="articles" className="py-24 px-4 sm:px-6 lg:px-8 relative z-10 bg-slate-950/20">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <Badge variant="violet" dot size="sm" className="mb-3">
             <Newspaper className="w-3.5 h-3.5 mr-1" /> {articlesData.badge}
           </Badge>
@@ -32,59 +63,143 @@ export const ArticlesSection: React.FC = () => {
           </Text>
         </div>
 
-        {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {articlesData.items.map((article, idx) => (
-            <GlassCard
-              key={article.id}
-              as="article"
-              variant="interactive"
-              className="flex flex-col h-full p-6 sm:p-7 group cursor-pointer border border-white/10 hover:border-purple-500/40"
-              onClick={() => setActiveArticleIndex(idx)}
-            >
-              {/* Top Meta info */}
-              <div className="flex items-center justify-between gap-2 mb-4">
-                <span className="text-xs text-slate-400 font-mono">
-                  {article.publishedAt}
-                </span>
-                <Badge variant="violet" size="sm">
-                  <Clock className="w-3 h-3 mr-1" />
-                  {article.readTime}
-                </Badge>
-              </div>
-
-              {/* Title */}
-              <Heading
-                level="h3"
-                className="text-white group-hover:text-purple-300 transition-colors duration-200 mb-3 text-lg line-clamp-2"
+        {/* Search & Tag Filters Bar */}
+        <div className="max-w-4xl mx-auto mb-12 space-y-4">
+          {/* Search Bar Input */}
+          <div className="relative">
+            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+              <Search className="w-4 h-4" />
+            </div>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Buscar artigos por palavra-chave, conceito ou tag..."
+              className="w-full pl-11 pr-4 py-3 rounded-2xl bg-slate-900/60 border border-white/10 text-sm text-slate-200 placeholder-slate-400 focus:outline-none focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 backdrop-blur-md transition-all"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute inset-y-0 right-0 pr-4 flex items-center text-xs text-slate-400 hover:text-white"
               >
-                {article.title}
-              </Heading>
+                Limpar
+              </button>
+            )}
+          </div>
 
-              {/* Summary */}
-              <Text variant="muted" size="sm" className="mb-6 flex-1 line-clamp-3">
-                {article.summary}
-              </Text>
+          {/* Tag Filter Pills */}
+          <div className="flex items-center justify-center flex-wrap gap-2">
+            <button
+              onClick={() => setSelectedTag('all')}
+              className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
+                selectedTag === 'all'
+                  ? 'bg-purple-500/20 text-purple-300 border border-purple-500/40 shadow-glow-purple'
+                  : 'bg-slate-900/40 text-slate-400 hover:text-white border border-white/10'
+              }`}
+            >
+              Todos ({articlesData.items.length})
+            </button>
+            {availableTags.map((tag) => (
+              <button
+                key={tag}
+                onClick={() => setSelectedTag(tag)}
+                className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
+                  selectedTag === tag
+                    ? 'bg-purple-500/20 text-purple-300 border border-purple-500/40 shadow-glow-purple'
+                    : 'bg-slate-900/40 text-slate-400 hover:text-white border border-white/10'
+                }`}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
+        </div>
 
-              {/* Tags & Action Link */}
-              <div className="flex items-center justify-between gap-3 pt-4 border-t border-white/10 mt-auto">
-                <div className="flex flex-wrap gap-1.5">
-                  {article.tags.slice(0, 2).map((tag) => (
-                    <Badge key={tag} variant="glass" size="sm" className="bg-slate-900/50 text-slate-300">
-                      {tag}
+        {/* Articles Grid */}
+        {filteredArticles.length === 0 ? (
+          <div className="text-center py-16 px-4 max-w-md mx-auto rounded-2xl bg-slate-900/40 border border-white/10">
+            <Text variant="muted">Nenhum artigo localizado para a busca ou filtro selecionado.</Text>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="mt-4"
+              onClick={() => {
+                setSearchQuery('');
+                setSelectedTag('all');
+              }}
+            >
+              Limpar Filtros
+            </Button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filteredArticles.map((article, idx) => (
+              <GlassCard
+                key={article.id}
+                as="article"
+                variant="interactive"
+                className="flex flex-col h-full p-6 sm:p-7 group cursor-pointer border border-white/10 hover:border-purple-500/40"
+                onClick={() => {
+                  if (onSelectArticle) {
+                    onSelectArticle(article.slug);
+                  } else {
+                    setActiveArticleIndex(idx);
+                  }
+                }}
+              >
+                {/* Featured Badge */}
+                {article.featured && (
+                  <div className="mb-3">
+                    <Badge variant="violet" dot size="sm">
+                      <Sparkles className="w-3 h-3 mr-0.5" /> Destaque Cósmico
                     </Badge>
-                  ))}
+                  </div>
+                )}
+
+                {/* Top Meta info */}
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <span className="text-xs text-slate-400 font-mono">
+                    {article.publishedAt}
+                  </span>
+                  <Badge variant="violet" size="sm">
+                    <Clock className="w-3 h-3 mr-1" />
+                    {article.readTime}
+                  </Badge>
                 </div>
 
-                <span className="inline-flex items-center gap-1 text-xs font-semibold text-purple-300 group-hover:text-purple-200 group-hover:translate-x-0.5 transition-all">
-                  <BookOpen className="w-3.5 h-3.5" />
-                  <span>{articlesData.readAction}</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </span>
-              </div>
-            </GlassCard>
-          ))}
-        </div>
+                {/* Title */}
+                <Heading
+                  level="h3"
+                  className="text-white group-hover:text-purple-300 transition-colors duration-200 mb-3 text-lg line-clamp-2"
+                >
+                  {article.title}
+                </Heading>
+
+                {/* Summary */}
+                <Text variant="muted" size="sm" className="mb-6 flex-1 line-clamp-3">
+                  {article.summary}
+                </Text>
+
+                {/* Tags & Action Link */}
+                <div className="flex items-center justify-between gap-3 pt-4 border-t border-white/10 mt-auto">
+                  <div className="flex flex-wrap gap-1.5">
+                    {article.tags.slice(0, 2).map((tag) => (
+                      <Badge key={tag} variant="glass" size="sm" className="bg-slate-900/50 text-slate-300">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-purple-300 group-hover:text-purple-200 group-hover:translate-x-0.5 transition-all">
+                    <BookOpen className="w-3.5 h-3.5" />
+                    <span>{articlesData.readAction}</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </span>
+                </div>
+              </GlassCard>
+            ))}
+          </div>
+        )}
 
         {/* Article Reading Preview Modal */}
         {activeArticle && (
@@ -118,7 +233,7 @@ export const ArticlesSection: React.FC = () => {
                   variant="glow-primary"
                   size="sm"
                   onClick={() => {
-                    alert('Artigo completo em breve no blog oficial do GlassHub!');
+                    handleOpenArticle(activeArticle.slug);
                     setActiveArticleIndex(null);
                   }}
                   rightIcon={<ArrowRight className="w-4 h-4" />}
@@ -136,10 +251,7 @@ export const ArticlesSection: React.FC = () => {
 
             <div className="space-y-3 mb-6 text-sm text-slate-300 leading-relaxed">
               <p>
-                A concepção de arquiteturas sustentáveis exige equilíbrio constante entre abstrações expressivas e rigor de performance. Ao adotar o isolamento de camadas e regras de negócio puras, garantimos longevidade ao código-fonte.
-              </p>
-              <p>
-                No ecossistema do GlassHub, cada padrão documentado é acompanhado de implementações de referência no GitHub, permitindo que a comunidade analise não apenas a teoria, mas o código em execução real.
+                {activeArticle.subtitle || activeArticle.summary}
               </p>
             </div>
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FolderGit2, Sparkles, ExternalLink } from 'lucide-react';
+import { FolderGit2, Sparkles, ExternalLink, Lock } from 'lucide-react';
 import { Heading } from '../atoms/Heading';
 import { Text } from '../atoms/Text';
 import { Badge } from '../atoms/Badge';
@@ -8,6 +8,7 @@ import { Button } from '../atoms/Button';
 import { GlassCard } from '../atoms/GlassCard';
 import { GitHubIcon } from '../atoms/BrandIcons';
 import { useLanguage } from '../../context/LanguageContext';
+import { useToast } from '../../context/ToastContext';
 
 type ProjectFilterCategory = 'all' | 'webapp' | 'devtools' | 'games';
 
@@ -27,6 +28,7 @@ const accentBadges = {
 
 export const ProjectsSection: React.FC = () => {
   const { t } = useLanguage();
+  const { showComingSoonToast } = useToast();
   const [selectedCategory, setSelectedCategory] = useState<ProjectFilterCategory>('all');
   const proj = t.projects;
 
@@ -132,6 +134,12 @@ export const ProjectsSection: React.FC = () => {
                           {project.category.toUpperCase()}
                         </Badge>
                       </div>
+
+                      {project.isComingSoon && (
+                        <Badge variant="violet" size="sm" className="bg-purple-950/80 text-purple-300 border-purple-500/40">
+                          <Lock className="w-3 h-3 mr-1" /> EM BREVE
+                        </Badge>
+                      )}
                     </div>
 
                     {/* Title & Tagline */}
@@ -168,29 +176,43 @@ export const ProjectsSection: React.FC = () => {
 
                     {/* Action Links */}
                     <div className="relative z-10 flex items-center gap-3 pt-4 border-t border-white/10 mt-auto">
-                      {project.demoUrl && (
+                      {project.isComingSoon ? (
                         <Button
                           variant="glow-primary"
                           size="sm"
-                          href={project.demoUrl}
-                          target="_blank"
-                          rightIcon={<ExternalLink className="w-3.5 h-3.5" />}
+                          onClick={() => showComingSoonToast(project.title)}
+                          rightIcon={<Lock className="w-3.5 h-3.5" />}
                           className="flex-1"
                         >
-                          {proj.viewDemo}
+                          Acessar Módulo (Em Breve)
                         </Button>
-                      )}
-                      {project.repoUrl && (
-                        <Button
-                          variant="outline-subtle"
-                          size="sm"
-                          href={project.repoUrl}
-                          target="_blank"
-                          leftIcon={<GitHubIcon className="w-4 h-4" />}
-                          className="flex-1"
-                        >
-                          {proj.viewRepo}
-                        </Button>
+                      ) : (
+                        <>
+                          {project.demoUrl && (
+                            <Button
+                              variant="glow-primary"
+                              size="sm"
+                              href={project.demoUrl}
+                              target="_blank"
+                              rightIcon={<ExternalLink className="w-3.5 h-3.5" />}
+                              className="flex-1"
+                            >
+                              {proj.viewDemo}
+                            </Button>
+                          )}
+                          {project.repoUrl && (
+                            <Button
+                              variant="outline-subtle"
+                              size="sm"
+                              href={project.repoUrl}
+                              target="_blank"
+                              leftIcon={<GitHubIcon className="w-4 h-4" />}
+                              className="flex-1"
+                            >
+                              {proj.viewRepo}
+                            </Button>
+                          )}
+                        </>
                       )}
                     </div>
                   </GlassCard>

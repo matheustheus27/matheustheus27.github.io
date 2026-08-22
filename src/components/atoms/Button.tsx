@@ -85,12 +85,26 @@ export const Button: React.FC<ButtonProps> = ({
   );
 
   if (href) {
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const targetElement = document.querySelector(href);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      if (props.onClick) {
+        props.onClick(e as any);
+      }
+    };
+
     return (
       <motion.a
         href={href}
         target={target}
         rel={target === '_blank' ? 'noopener noreferrer' : rel}
         className={commonClasses}
+        onClick={handleClick}
         whileHover={{ scale: 1.025 }}
         whileTap={{ scale: 0.975 }}
       >

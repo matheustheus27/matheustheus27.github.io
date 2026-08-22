@@ -55,8 +55,18 @@ export const CosmicBackground: React.FC = () => {
 
     createStars();
 
+    let isTabActive = true;
+    const handleVisibilityChange = () => {
+      isTabActive = !document.hidden;
+      if (isTabActive) {
+        render();
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
     let time = 0;
     const render = () => {
+      if (!isTabActive) return;
       time += 0.02;
       ctx.clearRect(0, 0, width, height);
 
@@ -87,6 +97,7 @@ export const CosmicBackground: React.FC = () => {
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);

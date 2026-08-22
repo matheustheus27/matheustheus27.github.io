@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { ToastProvider } from './context/ToastContext';
 import { LandingLayout } from './components/templates/LandingLayout';

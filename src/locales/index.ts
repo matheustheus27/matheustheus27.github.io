@@ -1,4 +1,5 @@
 import { IArticleItem } from '../data/articles.data';
+import { IProjectItem } from '../data/projects.data';
 
 export type Language = 'pt-BR' | 'en-US';
 
@@ -103,18 +104,7 @@ export interface Translations {
     filterGamesTools: string;
     viewDemo: string;
     viewRepo: string;
-    items: {
-      id: string;
-      title: string;
-      tagline: string;
-      description: string;
-      category: 'webapp' | 'devtools' | 'games';
-      tags: string[];
-      featured: boolean;
-      repoUrl: string;
-      demoUrl?: string;
-      accentColor: 'cyan' | 'violet' | 'blue' | 'emerald';
-    }[];
+    items: IProjectItem[];
   };
   articles: {
     badge: string;

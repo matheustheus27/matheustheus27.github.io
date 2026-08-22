@@ -29,7 +29,7 @@ import { Button } from '../atoms/Button';
 import { GlassCard } from '../atoms/GlassCard';
 import { useLanguage } from '../../context/LanguageContext';
 import { useToast } from '../../context/ToastContext';
-import { IArticleItem, IArticleSection } from '../../data/articles.data';
+import { IArticleSection } from '../../data/articles.data';
 
 interface ArticleReaderPageProps {
   articleSlug: string;

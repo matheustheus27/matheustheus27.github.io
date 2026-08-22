@@ -1,29 +1,31 @@
 <div align="center">
 
+![GlassHub Widget](https://glass-hub-engine.vercel.app/api/logo?project=portal&theme=glass-dark&animated=true&width=280&height=280)
+
 # 🌌 GlassHub Landing Page
 ### *Where Clean Architecture Meets the Depths of the Cosmos*
 
 <p align="center">
   <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React 19" />
+    <img src="https://glass-hub-engine.vercel.app/api/badge?label=React.js&value=v19&icon=react&url=https%3A%2F%2Freact.dev&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="React 19" />
   </a>
   <a href="https://www.typescriptlang.org/docs/" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/TypeScript_5-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://glass-hub-engine.vercel.app/api/badge?label=TypeScript&value=v5.7&icon=typescript&url=https%3A%2F%2Fwww.typescriptlang.org%2Fdocs%2F&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="TypeScript 5" />
   </a>
   <a href="https://tailwindcss.com/docs" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Tailwind_CSS_v3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+    <img src="https://glass-hub-engine.vercel.app/api/badge?label=Tailwind%20CSS&value=v3.4&icon=tailwind&url=https%3A%2F%2Ftailwindcss.com%2Fdocs&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="Tailwind CSS" />
   </a>
   <a href="https://motion.dev/docs" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=blue" alt="Framer Motion" />
+    <img src="https://glass-hub-engine.vercel.app/api/badge?label=Framer%20Motion&value=v12&icon=sparkles&url=https%3A%2F%2Fmotion.dev%2Fdocs&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="Framer Motion" />
   </a>
   <a href="https://lucide.dev/guide/" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Lucide_Icons-F05032?style=for-the-badge&logo=lucide&logoColor=white" alt="Lucide Icons" />
+    <img src="https://glass-hub-engine.vercel.app/api/badge?label=Lucide%20Icons&value=v1.16&icon=sparkles&url=https%3A%2F%2Flucide.dev%2Fguide%2F&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="Lucide Icons" />
   </a>
   <a href="https://github.com/soldair/node-qrcode" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/QR_Engine-QRCode.js-00f0ff?style=for-the-badge" alt="QR Engine" />
+    <img src="https://glass-hub-engine.vercel.app/api/badge?label=QR%20Engine&value=QRCode.js&icon=gear&url=https%3A%2F%2Fgithub.com%2Fsoldair%2Fnode-qrcode&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="QR Engine" />
   </a>
   <a href="./LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT_Custom-blueviolet?style=for-the-badge" alt="License" />
+    <img src="https://glass-hub-engine.vercel.app/api/badge?label=License&value=MIT&icon=sparkles&url=.%2FLICENSE&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="License" />
   </a>
 </p>
 
@@ -47,7 +49,7 @@
 
 ## 🔮 The GlassHub Philosophy
 
-> *"Glass is not the absence of matter, but proof that crystalline structure and pristine transparency can coexist under illumination."*
+![GlassHub Quote Widget](https://glass-hub-engine.vercel.app/api/quote?quote=Glass+is+not+the+absence+of+matter%2C+but+proof+that+crystalline+structure+and+pristine+transparency+can+coexist+under+illumination.&author=Matheus+Ferreira&theme=glass-dark&glow=true)
 
 **GlassHub** is forged at the crossroads of **human sensibility**, the **physics of glass**, and the **fundamental principles of the cosmos**:
 
@@ -117,14 +119,7 @@ GlassHub/
 
 ## 🌟 Connected Ecosystem Projects
 
-| Project | Description | Core Stack | Repository |
-| :--- | :--- | :--- | :--- |
-| **Glassmorphic Resume** | Modern resume builder featuring live glassmorphic preview and vector PDF compilation. | React, TypeScript, Tailwind | [GitHub](https://github.com/matheustheus27/GlassmorphicProfessionalResume) |
-| **DocShell** | Structured CLI engine for automated code documentation, versioning, and architectural tracking. | TypeScript, Node.js, CLI | [GitHub](https://github.com/matheustheus27/DocShell) |
-| **NativeZipTools** | High-performance low-level toolkit for stream-based ZIP archive manipulation without external dependencies. | C#, .NET, I/O Streams | [GitHub](https://github.com/matheustheus27/NativeZipTools) |
-| **Bubble — Unity Game** | Full-scale original game exploring mechanical physics and physics-driven game architecture. | C#, Unity Engine | [GitHub](https://github.com/CommitJr/bubble) |
-| **Earth Defenders** | Classic Shoot 'em Up arcade game with custom collision math and high-performance render loops. | Game Dev, Algorithms | [GitHub](https://github.com/matheustheus27/EarthDefenders-ShmupsGame) |
-| **Solar System Simulator** | Low-level gravitational N-body orbital simulator prioritizing mathematical precision and memory efficiency. | Low-Level, Gravitational Physics | [GitHub](https://github.com/matheustheus27/SolarSystem-Low-Level-Simulator) |
+![GlassHub Widget](https://glass-hub-engine.vercel.app/api/table?title=Connected+Ecosystem+Projects&columns=Project%2CDescription%2CCore+Stack%2CRepository&rows=GlassHub+Resume%2CModern+resume+builder+with+live+PDF+export%2CReact+%2B+TS+%2B+Tailwind%2CGitHub%3BGlassHub+Engine%2CAutonomous+telemetry+%26+SVG+metrics+engine%2CTypeScript+%2B+Edge+API%2CGitHub%3BGlassHub+DocShell%2CMultilanguage+CLI+engine+for+web+%26+PDF+docs%2CShell+%2B+PowerShell%2CGitHub%3BGlassHub+EventHorizon%2CHigh-throughput+cosmic+stream+processing%2CC%23+%2B+.NET+%2B+Direct+I%2FO%2CGitHub%3BGlassHub+Saltus%2CDecentralized+P2P+high-privacy+messenger%2CKotlin+%2B+Android%2CTests%3BBubble+%E2%80%94+Unity+Game%2CPhysics-driven+game+created+at+Commit+Jr.%2CC%23+%2B+Unity+Engine%2CGitHub&theme=glass-dark&width=820&col_widths=22,42,24,12)
 
 ---
 
@@ -173,16 +168,16 @@ Developed with 💙 by **Matheus Ferreira** — *Software Engineer & Computer En
 
 <p align="left">
   <a href="https://github.com/matheustheus27" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+    <img src="https://glass-hub-engine.vercel.app/api/badge?label=GitHub&value=matheustheus27&icon=github&url=https%3A%2F%2Fgithub.com%2Fmatheustheus27&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="GitHub" />
   </a>
   <a href="https://linkedin.com/in/matheustheus27" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="https://glass-hub-engine.vercel.app/api/badge?label=LinkedIn&value=matheustheus27&icon=linkedin&url=https%3A%2F%2Flinkedin.com%2Fin%2Fmatheustheus27&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="LinkedIn" />
   </a>
   <a href="https://www.instagram.com/matheustheus27/" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+    <img src="https://glass-hub-engine.vercel.app/api/badge?label=Instagram&value=%40matheustheus27&icon=instagram&url=https%3A%2F%2Fwww.instagram.com%2Fmatheustheus27%2F&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="Instagram" />
   </a>
   <a href="mailto:matheustheus27@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    <img src="https://glass-hub-engine.vercel.app/api/badge?label=Email&value=matheustheus27%40gmail.com&icon=email&url=mailto%3Amatheustheus27%40gmail.com&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="Email" />
   </a>
 </p>
 

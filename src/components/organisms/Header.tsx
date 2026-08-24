@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Layers, Sparkles, Heart } from 'lucide-react';
+import { Menu, X, Sparkles, Heart } from 'lucide-react';
 import { NavItem } from '../molecules/NavItem';
 import { Button } from '../atoms/Button';
 import { LanguageToggle } from '../atoms/LanguageToggle';
+import { GlassHubLogo } from '../atoms/GlassHubLogo';
 import { useLanguage } from '../../context/LanguageContext';
 
 interface HeaderProps {
@@ -76,13 +77,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContribution, onNavigateSe
         <a
           href="#hero"
           onClick={(e) => handleNavClick(e, '#hero')}
-          className="group flex items-center gap-2.5 select-none focus:outline-none"
+          className="group flex items-center gap-3 select-none focus:outline-none"
         >
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500/20 via-indigo-500/20 to-purple-500/20 border border-cyan-500/40 group-hover:border-cyan-400/80 shadow-glass-sm group-hover:shadow-glow-cyan transition-all duration-300 backdrop-blur-md">
-            <Layers className="w-5 h-5 text-cyan-300 group-hover:scale-110 transition-transform duration-300" />
+          <div className="relative flex items-center justify-center p-1 rounded-2xl bg-slate-900/60 border border-cyan-500/30 group-hover:border-cyan-400/80 shadow-glass-sm group-hover:shadow-glow-cyan transition-all duration-300 backdrop-blur-md">
+            <GlassHubLogo size={36} animated={false} className="group-hover:scale-110 transition-transform duration-300" />
             <span className="absolute -top-1 -right-1 flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
             </span>
           </div>
 
@@ -91,7 +92,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContribution, onNavigateSe
               Glass<span className="text-cyan-400">Hub</span>
             </span>
             <span className="text-[10px] uppercase font-mono tracking-widest text-slate-400 -mt-1 flex items-center gap-1">
-              <span>Cosmic Arch</span>
+              <span>Cosmic Ecosystem</span>
               <Sparkles className="w-2.5 h-2.5 text-cyan-400 inline" />
             </span>
           </div>

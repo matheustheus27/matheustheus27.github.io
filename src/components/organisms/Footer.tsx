@@ -1,8 +1,9 @@
 import React from 'react';
-import { Layers, ArrowUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 import { ISocialLink } from '../../types';
 import { SocialLink } from '../molecules/SocialLink';
 import { Text } from '../atoms/Text';
+import { GlassHubLogo } from '../atoms/GlassHubLogo';
 import { useLanguage } from '../../context/LanguageContext';
 
 interface FooterProps {
@@ -49,9 +50,9 @@ export const Footer: React.FC<FooterProps> = ({ socials, onNavigateSection }) =>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-white/10">
           {/* Brand Column */}
           <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500/20 via-indigo-500/20 to-purple-500/20 border border-cyan-500/40 shadow-glow-cyan">
-                <Layers className="w-5 h-5 text-cyan-300" />
+            <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center p-1 rounded-2xl bg-slate-900/60 border border-cyan-500/30 shadow-glow-cyan backdrop-blur-md">
+                <GlassHubLogo size={36} animated={false} />
               </div>
               <span className="text-xl font-bold tracking-tight font-display text-white">
                 Glass<span className="text-cyan-400">Hub</span>

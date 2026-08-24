@@ -6,6 +6,7 @@ import { Text } from '../atoms/Text';
 import { Button } from '../atoms/Button';
 import { Badge } from '../atoms/Badge';
 import { GlassCard } from '../atoms/GlassCard';
+import { GlassHubLogo } from '../atoms/GlassHubLogo';
 import { useLanguage } from '../../context/LanguageContext';
 
 interface HeroSectionProps {
@@ -26,11 +27,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       className="relative min-h-[92vh] flex items-center justify-center pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto w-full text-center relative z-10">
+        {/* Central Cosmic Emblem */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center mb-6"
+        >
+          <div className="relative group cursor-pointer">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-blue-500/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all" />
+            <div className="relative p-3 rounded-3xl bg-slate-900/60 border border-cyan-500/30 group-hover:border-cyan-400/70 shadow-glow-cyan backdrop-blur-2xl transition-all duration-300">
+              <GlassHubLogo size={72} animated={true} />
+            </div>
+          </div>
+        </motion.div>
+
         {/* Top Floating Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           className="inline-flex items-center gap-2 mb-6"
         >
           <Badge variant="cyan" dot size="md" className="shadow-lg shadow-cyan-950/60 backdrop-blur-md px-4 py-1.5 border-cyan-400/40">

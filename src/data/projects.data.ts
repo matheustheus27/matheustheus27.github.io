@@ -17,15 +17,15 @@ export interface IProjectItem {
 
 export const projectsDataPt: IProjectItem[] = [
   {
-    id: 'glasshub-resume',
-    title: 'GlassHub Professional Resume',
+    id: 'glasshub-pulsar',
+    title: 'GlassHub Pulsar',
     tagline: 'Construtor moderno de currículos com preview dinâmico e exportação em PDF.',
     description:
       'Aplicação web com estética glassmorphic que permite aos desenvolvedores estruturarem currículos profissionais com customização em tempo real e renderização vetorial de PDF de alta fidelidade.',
     category: 'webapp',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'PDF Engine', 'Glassmorphism'],
     featured: true,
-    repoUrl: 'https://github.com/matheustheus27/GlassHubProfessionalResume',
+    repoUrl: 'https://github.com/matheustheus27/GlassHubPulsar',
     accentColor: 'cyan',
     metrics: [
       { label: 'Exportação', value: 'PDF Vector' },
@@ -33,15 +33,15 @@ export const projectsDataPt: IProjectItem[] = [
     ],
   },
   {
-    id: 'glasshub-engine',
-    title: 'GlassHub Engine',
+    id: 'glasshub-quasar',
+    title: 'GlassHub Quasar',
     tagline: 'Motor autônomo de métricas, telemetria e linguagens com visualização glassmorphic.',
     description:
       'Substituto moderno para os utilitários de estatísticas do GitHub, fornecendo cartões vetoriais translúcidos de alta precisão e análise de repositórios em tempo real.',
     category: 'devtools',
     tags: ['TypeScript', 'GitHub API', 'Metrics Engine', 'SVG Renderer', 'DevTools'],
     featured: true,
-    repoUrl: 'https://github.com/matheustheus27/GlassHubEngine',
+    repoUrl: 'https://github.com/matheustheus27/GlassHubQuasar',
     accentColor: 'cyan',
     metrics: [
       { label: 'Telemetry', value: 'Live GitHub Stats' },
@@ -49,15 +49,15 @@ export const projectsDataPt: IProjectItem[] = [
     ],
   },
   {
-    id: 'glasshub-docshell',
-    title: 'GlassHub DocShell',
+    id: 'glasshub-catalyst',
+    title: 'GlassHub Catalyst',
     tagline: 'Motor CLI multilinguagem (Shell Script / PowerShell) para geração de documentações web (Python, PHP, JS) e PDF.',
     description:
       'Utilitário CLI construído em Shell Script e PowerShell para padronizar, compilar e gerar documentações técnicas interativas em formatos web (suportando ecossistemas Python, PHP e JavaScript) e exportação em PDF. Projetado para automação ágil em pipelines de CI/CD.',
     category: 'devtools',
     tags: ['Shell Script', 'PowerShell', 'Web Docs (Python/PHP/JS)', 'PDF Generator', 'Documentation Engine', 'DevTools'],
     featured: true,
-    repoUrl: 'https://github.com/matheustheus27/GlassHubDocShell',
+    repoUrl: 'https://github.com/matheustheus27/GlassHubCatalyst',
     accentColor: 'violet',
     metrics: [
       { label: 'CLI Core', value: 'Shell & PowerShell' },
@@ -81,15 +81,15 @@ export const projectsDataPt: IProjectItem[] = [
     ],
   },
   {
-    id: 'glasshub-saltus',
-    title: 'GlassHub Saltus',
+    id: 'glasshub-nexus',
+    title: 'GlassHub Nexus',
     tagline: 'Mensageiro descentralizado de alta privacidade construído nativamente em Kotlin para Android.',
     description:
       'Plataforma de comunicação descentralizada, P2P e de alta privacidade com criptografia de ponta a ponta, roteamento anônimo e zero retenção de metadados, inicialmente disponível para Android. Atualmente em fase final de testes de engenharia e validação de nós da rede.',
     category: 'webapp',
     tags: ['Kotlin', 'Android', 'Decentralized Messaging', 'P2P Network', 'End-to-End Encryption', 'Privacy First'],
     featured: true,
-    repoUrl: '#',
+    repoUrl: 'https://github.com/matheustheus27/GlassHubNexus',
     accentColor: 'violet',
     isComingSoon: true,
     metrics: [
@@ -98,34 +98,35 @@ export const projectsDataPt: IProjectItem[] = [
     ],
   },
   {
-    id: 'bubble-game',
-    title: 'Bubble — Unity Game',
-    tagline: 'Jogo completo desenvolvido na Empresa Júnior (Commit Jr.).',
+    id: 'glasshub-nebula',
+    title: 'GlassHub Nebula',
+    tagline: 'Motor gráfico nativo para Windows projetado para renderização acelerada e simulação visual.',
     description:
-      'Projeto autoral em C# e Unity Engine com foco em arquitetura de mecânicas, física customizada, level design e inteligência artificial de entidades, desenvolvido sob liderança técnica na Commit Jr.',
-    category: 'games',
-    tags: ['C#', 'Unity Engine', 'Game Architecture', 'Commit Jr.', 'Physics'],
-    featured: false,
-    repoUrl: 'https://github.com/CommitJr/bubble',
-    accentColor: 'emerald',
+      'Engine gráfica de alta fidelidade desenvolvida em C++ e DirectX para ambientes Windows, fornecendo pipelines otimizados de shaders, gerenciamento de memória de baixo nível e renderização com baixa latência.',
+    category: 'devtools',
+    tags: ['C++', 'DirectX', 'Windows Engine', 'Graphics Pipeline', 'Low Level', 'DevTools'],
+    featured: true,
+    repoUrl: 'https://github.com/matheustheus27/GlassHubNebula',
+    accentColor: 'cyan',
+    isComingSoon: true,
     metrics: [
-      { label: 'Empresa Júnior', value: 'Commit Jr.' },
-      { label: 'Engine', value: 'Unity & C#' },
+      { label: 'Arquitetura', value: 'C++ & DirectX' },
+      { label: 'Alvo', value: 'Windows Nativo' },
     ],
   },
 ];
 
 export const projectsDataEn: IProjectItem[] = [
   {
-    id: 'glasshub-resume',
-    title: 'GlassHub Professional Resume',
+    id: 'glasshub-pulsar',
+    title: 'GlassHub Pulsar',
     tagline: 'Modern resume builder with dynamic live preview and high-fidelity PDF export.',
     description:
       'A glassmorphic web application empowering developers to architect polished resumes with real-time customization and vector-quality PDF rendering.',
     category: 'webapp',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'PDF Engine', 'Glassmorphism'],
     featured: true,
-    repoUrl: 'https://github.com/matheustheus27/GlassHubProfessionalResume',
+    repoUrl: 'https://github.com/matheustheus27/GlassHubPulsar',
     accentColor: 'cyan',
     metrics: [
       { label: 'Export', value: 'Vector PDF' },
@@ -133,15 +134,15 @@ export const projectsDataEn: IProjectItem[] = [
     ],
   },
   {
-    id: 'glasshub-engine',
-    title: 'GlassHub Engine',
+    id: 'glasshub-quasar',
+    title: 'GlassHub Quasar',
     tagline: 'Autonomous telemetry and language metrics engine with glassmorphic visualization.',
     description:
       'A modern substitute for GitHub statistics cards, rendering high-precision translucent vector cards and real-time repository analytics.',
     category: 'devtools',
     tags: ['TypeScript', 'GitHub API', 'Metrics Engine', 'SVG Renderer', 'DevTools'],
     featured: true,
-    repoUrl: 'https://github.com/matheustheus27/GlassHubEngine',
+    repoUrl: 'https://github.com/matheustheus27/GlassHubQuasar',
     accentColor: 'cyan',
     metrics: [
       { label: 'Telemetry', value: 'Live GitHub Stats' },
@@ -149,15 +150,15 @@ export const projectsDataEn: IProjectItem[] = [
     ],
   },
   {
-    id: 'glasshub-docshell',
-    title: 'GlassHub DocShell',
+    id: 'glasshub-catalyst',
+    title: 'GlassHub Catalyst',
     tagline: 'Multilanguage CLI engine (Shell Script / PowerShell) for generating web (Python, PHP, JS) and PDF docs.',
     description:
       'CLI utility built with Shell Script and PowerShell to standardize, compile, and generate interactive technical documentation in web formats (supporting Python, PHP, and JavaScript projects) alongside PDF export. Engineered for agile CI/CD pipeline automation.',
     category: 'devtools',
     tags: ['Shell Script', 'PowerShell', 'Web Docs (Python/PHP/JS)', 'PDF Generator', 'Documentation Engine', 'DevTools'],
     featured: true,
-    repoUrl: 'https://github.com/matheustheus27/GlassHubDocShell',
+    repoUrl: 'https://github.com/matheustheus27/GlassHubCatalyst',
     accentColor: 'violet',
     metrics: [
       { label: 'CLI Core', value: 'Shell & PowerShell' },
@@ -181,15 +182,15 @@ export const projectsDataEn: IProjectItem[] = [
     ],
   },
   {
-    id: 'glasshub-saltus',
-    title: 'GlassHub Saltus',
+    id: 'glasshub-nexus',
+    title: 'GlassHub Nexus',
     tagline: 'Decentralized high-privacy messenger built natively in Kotlin for Android.',
     description:
       'Decentralized, P2P high-privacy communication platform featuring end-to-end encryption, anonymous routing, and zero metadata retention, initially available for Android. Currently undergoing final engineering tests and network node validation.',
     category: 'webapp',
     tags: ['Kotlin', 'Android', 'Decentralized Messaging', 'P2P Network', 'End-to-End Encryption', 'Privacy First'],
     featured: true,
-    repoUrl: '#',
+    repoUrl: 'https://github.com/matheustheus27/GlassHubNexus',
     accentColor: 'violet',
     isComingSoon: true,
     metrics: [
@@ -198,19 +199,20 @@ export const projectsDataEn: IProjectItem[] = [
     ],
   },
   {
-    id: 'bubble-game',
-    title: 'Bubble — Unity Game',
-    tagline: 'Full-fledged physics game created during junior enterprise tenure (Commit Jr.).',
+    id: 'glasshub-nebula',
+    title: 'GlassHub Nebula',
+    tagline: 'Native Windows graphics engine engineered for accelerated rendering and visual simulation.',
     description:
-      'Original C# and Unity Engine project exploring mechanics architecture, custom physics, level design, and entity AI, developed under technical leadership at Commit Jr.',
-    category: 'games',
-    tags: ['C#', 'Unity Engine', 'Game Architecture', 'Commit Jr.', 'Physics'],
-    featured: false,
-    repoUrl: 'https://github.com/CommitJr/bubble',
-    accentColor: 'emerald',
+      'High-fidelity graphics engine built in C++ and DirectX for Windows environments, delivering optimized shader pipelines, low-level memory management, and low-latency rendering.',
+    category: 'devtools',
+    tags: ['C++', 'DirectX', 'Windows Engine', 'Graphics Pipeline', 'Low Level', 'DevTools'],
+    featured: true,
+    repoUrl: 'https://github.com/matheustheus27/GlassHubNebula',
+    accentColor: 'cyan',
+    isComingSoon: true,
     metrics: [
-      { label: 'Junior Enterprise', value: 'Commit Jr.' },
-      { label: 'Engine', value: 'Unity & C#' },
+      { label: 'Architecture', value: 'C++ & DirectX' },
+      { label: 'Target', value: 'Native Windows' },
     ],
   },
 ];

@@ -112,15 +112,15 @@ export type TranslationSchema = typeof import('./en').en;
 
 ---
 
-## 🛠️ 6. GlassHub Engine Dynamic API Service (`https://glass-hub-engine.vercel.app/api/...`)
+## 🛠️ 6. GlassHub Quasar Dynamic API Service (`https://glasshub-quasar.vercel.app/api/...`)
 
-The GlassHub Engine repository (`P:\Git\GitHub\GlassHubEngine`) provides serverless Next.js App Router edge endpoints to generate dynamic SVG widgets and glassmorphic cards:
+The GlassHub Quasar repository provides serverless Next.js App Router edge endpoints to generate dynamic SVG widgets and glassmorphic cards:
 
 | Endpoint | Purpose | Key Parameters |
 | :--- | :--- | :--- |
 | `/api/badge` | Glassmorphic Tech & Social Badges | `label`, `value`, `icon`, `theme`, `glow` |
 | `/api/table` | Architecture & Tech Stack Tables | `title`, `columns`, `rows`, `theme` |
-| `/api/logo` | Animated Ecosystem Logos | `project` (`portal`, `engine`, `resume`, `docshell`, `eventhorizon`), `animated`, `width`, `height` |
+| `/api/logo` | Animated Ecosystem Logos | `project` (`portal`, `quasar`, `pulsar`, `catalyst`, `eventhorizon`, `nexus`, `nebula`), `animated`, `width`, `height` |
 | `/api/stats` | GitHub Profile Telemetry | `username`, `show_icons`, `hide_rank`, `theme` |
 | `/api/top-langs` | Most Used Languages Chart | `username`, `layout` (`bars`, `compact`, `donut`), `limit` |
 | `/api/streak` | Contribution Activity Streak | `username`, `glow`, `theme` |
@@ -135,7 +135,7 @@ The GlassHub Engine repository (`P:\Git\GitHub\GlassHubEngine`) provides serverl
 - **Languages:** `typescript`, `javascript`, `python`, `rust`, `go`, `java`, `php`, `kotlin`, `csharp`, `cpp`.
 - **Frameworks:** `react`, `nextjs`, `vue`, `angular`, `svelte`, `tailwind`, `nodejs`.
 - **Socials:** `github`, `linkedin`, `instagram`, `email`, `discord`, `youtube`, `twitter`.
-- **Ecosystem:** `glasshub`, `glasshubengine`, `docshell`, `glasshubprofessionalresume`.
+- **Ecosystem:** `glasshub`, `glasshubquasar`, `glasshubpulsar`, `glasshubcatalyst`, `glasshubnexus`, `glasshubnebula`, `glasshubeventhorizon`.
 
 ---
 

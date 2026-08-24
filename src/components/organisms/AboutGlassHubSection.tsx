@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Boxes, ShieldCheck, Sparkles, Eye, ArrowRight, Check, Flame, Atom } from 'lucide-react';
+import { Boxes, ShieldCheck, Sparkles, Eye, ArrowRight, Check, Flame, Atom, Monitor } from 'lucide-react';
 import { Heading } from '../atoms/Heading';
 import { Text } from '../atoms/Text';
 import { Badge } from '../atoms/Badge';
@@ -55,7 +55,7 @@ export const AboutGlassHubSection: React.FC = () => {
             className="p-8 sm:p-10 border-cyan-400/40 text-center relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-            
+
             <Badge variant="cyan" size="sm" className="mb-4">
               GlassHub Architecture Core
             </Badge>
@@ -92,13 +92,13 @@ export const AboutGlassHubSection: React.FC = () => {
               </Heading>
             </div>
             <span className="text-xs text-slate-400 font-mono hidden sm:inline-block">
-              5 Módulos Autônomos & Desacoplados
+              6 Módulos Autônomos & Desacoplados
             </span>
           </div>
 
           {/* Interactive Nodes Flow Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative z-10">
-            {/* Node 1: Resume */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 relative z-10">
+            {/* Node 1: Pulsar */}
             <div className="p-4 rounded-2xl bg-cyan-950/30 border border-cyan-500/30 hover:border-cyan-400/60 transition-all flex flex-col justify-between group">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[10px] font-mono font-semibold text-cyan-400 bg-cyan-500/20 px-2 py-0.5 rounded-full">
@@ -107,14 +107,14 @@ export const AboutGlassHubSection: React.FC = () => {
                 <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
               </div>
               <h4 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors mb-1">
-                GlassHub Resume
+                GlassHub Pulsar
               </h4>
               <p className="text-xs text-slate-400 leading-tight">
                 Preview dinâmico em tempo real & exportação vetorial PDF.
               </p>
             </div>
 
-            {/* Node 2: Engine */}
+            {/* Node 2: Quasar */}
             <div className="p-4 rounded-2xl bg-purple-950/30 border border-purple-500/30 hover:border-purple-400/60 transition-all flex flex-col justify-between group">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[10px] font-mono font-semibold text-purple-400 bg-purple-500/20 px-2 py-0.5 rounded-full">
@@ -123,14 +123,14 @@ export const AboutGlassHubSection: React.FC = () => {
                 <Atom className="w-3.5 h-3.5 text-purple-300" />
               </div>
               <h4 className="text-sm font-bold text-white group-hover:text-purple-300 transition-colors mb-1">
-                GlassHub Engine
+                GlassHub Quasar
               </h4>
               <p className="text-xs text-slate-400 leading-tight">
                 Motor de estatísticas & telemetria em tempo real.
               </p>
             </div>
 
-            {/* Node 3: DocShell */}
+            {/* Node 3: Catalyst */}
             <div className="p-4 rounded-2xl bg-indigo-950/30 border border-indigo-500/30 hover:border-indigo-400/60 transition-all flex flex-col justify-between group">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[10px] font-mono font-semibold text-indigo-400 bg-indigo-500/20 px-2 py-0.5 rounded-full">
@@ -139,7 +139,7 @@ export const AboutGlassHubSection: React.FC = () => {
                 <Boxes className="w-3.5 h-3.5 text-indigo-300" />
               </div>
               <h4 className="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors mb-1">
-                GlassHub DocShell
+                GlassHub Catalyst
               </h4>
               <p className="text-xs text-slate-400 leading-tight">
                 Geração CLI de documentações Web (Py/PHP/JS) & PDF.
@@ -155,14 +155,14 @@ export const AboutGlassHubSection: React.FC = () => {
                 <Flame className="w-3.5 h-3.5 text-blue-300" />
               </div>
               <h4 className="text-sm font-bold text-white group-hover:text-blue-300 transition-colors mb-1">
-                EventHorizon
+                GlassHub EventHorizon
               </h4>
               <p className="text-xs text-slate-400 leading-tight">
                 Processamento contínuo em streams I/O nativas.
               </p>
             </div>
 
-            {/* Node 5: Saltus */}
+            {/* Node 5: Nexus */}
             <div className="p-4 rounded-2xl bg-fuchsia-950/30 border border-fuchsia-500/30 hover:border-fuchsia-400/60 transition-all flex flex-col justify-between group">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[10px] font-mono font-semibold text-fuchsia-400 bg-fuchsia-500/20 px-2 py-0.5 rounded-full">
@@ -171,10 +171,26 @@ export const AboutGlassHubSection: React.FC = () => {
                 <ShieldCheck className="w-3.5 h-3.5 text-fuchsia-300" />
               </div>
               <h4 className="text-sm font-bold text-white group-hover:text-fuchsia-300 transition-colors mb-1">
-                GlassHub Saltus
+                GlassHub Nexus
               </h4>
               <p className="text-xs text-slate-400 leading-tight">
                 Mensageiro descentralizado & privacidade Android.
+              </p>
+            </div>
+
+            {/* Node 6: Nebula */}
+            <div className="p-4 rounded-2xl bg-emerald-950/30 border border-emerald-500/30 hover:border-emerald-400/60 transition-all flex flex-col justify-between group">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] font-mono font-semibold text-emerald-400 bg-emerald-500/20 px-2 py-0.5 rounded-full">
+                  C++ / DIRECTX
+                </span>
+                <Monitor className="w-3.5 h-3.5 text-emerald-300" />
+              </div>
+              <h4 className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors mb-1">
+                GlassHub Nebula
+              </h4>
+              <p className="text-xs text-slate-400 leading-tight">
+                Motor gráfico Windows & pipelines acelerados.
               </p>
             </div>
           </div>

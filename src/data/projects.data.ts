@@ -33,6 +33,22 @@ export const projectsDataPt: IProjectItem[] = [
     ],
   },
   {
+    id: 'glasshub-prism',
+    title: 'GlassHub Prism',
+    tagline: 'Estúdio cosmic glassmorphic para criação, preview e compilação de assinaturas de e-mail HTML com VML para Outlook.',
+    description:
+      'Estúdio web com estética glassmorphic para geração de assinaturas de e-mail profissionais e compatíveis com clientes modernos (Gmail, Outlook, Apple Mail). Conta com compilador HTML seguro baseado em tabelas, suporte a fallbacks VML para Outlook, 5 templates customizáveis, inspeção de compatibilidade e exportação em Rich Text, HTML e PNG.',
+    category: 'webapp',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'HTML Email Compiler', 'Glassmorphism'],
+    featured: true,
+    repoUrl: 'https://github.com/matheustheus27/GlassHubPrism',
+    accentColor: 'violet',
+    metrics: [
+      { label: 'Compilador', value: 'HTML Table & VML' },
+      { label: 'Templates', value: '5 Designs' },
+    ],
+  },
+  {
     id: 'glasshub-quasar',
     title: 'GlassHub Quasar',
     tagline: 'Motor autônomo de métricas, telemetria e linguagens com visualização glassmorphic.',
@@ -131,6 +147,22 @@ export const projectsDataEn: IProjectItem[] = [
     metrics: [
       { label: 'Export', value: 'Vector PDF' },
       { label: 'Design', value: 'Glassmorphic' },
+    ],
+  },
+  {
+    id: 'glasshub-prism',
+    title: 'GlassHub Prism',
+    tagline: 'Cosmic glassmorphic studio for designing, previewing, and compiling email-safe HTML signatures with Outlook VML support.',
+    description:
+      'Glassmorphic web studio for generating professional, client-compatible email signatures (Gmail, Outlook, Apple Mail). Features an HTML-safe table compiler, Outlook VML fallbacks, 5 customizable templates, live client compatibility inspection, and multi-format export (Rich Text, HTML, PNG).',
+    category: 'webapp',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'HTML Email Compiler', 'Glassmorphism'],
+    featured: true,
+    repoUrl: 'https://github.com/matheustheus27/GlassHubPrism',
+    accentColor: 'violet',
+    metrics: [
+      { label: 'Compiler', value: 'HTML Table & VML' },
+      { label: 'Templates', value: '5 Designs' },
     ],
   },
   {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Boxes, ShieldCheck, Sparkles, Eye, ArrowRight, Check, Flame, Atom, Monitor } from 'lucide-react';
+import { Boxes, ShieldCheck, Sparkles, Eye, ArrowRight, Check, Flame, Atom, Monitor, Mail } from 'lucide-react';
 import { Heading } from '../atoms/Heading';
 import { Text } from '../atoms/Text';
 import { Badge } from '../atoms/Badge';
@@ -92,12 +92,12 @@ export const AboutGlassHubSection: React.FC = () => {
               </Heading>
             </div>
             <span className="text-xs text-slate-400 font-mono hidden sm:inline-block">
-              6 Módulos Autônomos & Desacoplados
+              7 Módulos Autônomos & Desacoplados
             </span>
           </div>
 
           {/* Interactive Nodes Flow Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-7 gap-4 relative z-10">
             {/* Node 1: Pulsar */}
             <div className="p-4 rounded-2xl bg-cyan-950/30 border border-cyan-500/30 hover:border-cyan-400/60 transition-all flex flex-col justify-between group">
               <div className="flex items-center justify-between mb-2">
@@ -130,7 +130,23 @@ export const AboutGlassHubSection: React.FC = () => {
               </p>
             </div>
 
-            {/* Node 3: Catalyst */}
+            {/* Node 3: Prism */}
+            <div className="p-4 rounded-2xl bg-violet-950/30 border border-violet-500/30 hover:border-violet-400/60 transition-all flex flex-col justify-between group">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] font-mono font-semibold text-violet-400 bg-violet-500/20 px-2 py-0.5 rounded-full">
+                  EMAIL VML
+                </span>
+                <Mail className="w-3.5 h-3.5 text-violet-300" />
+              </div>
+              <h4 className="text-sm font-bold text-white group-hover:text-violet-300 transition-colors mb-1">
+                GlassHub Prism
+              </h4>
+              <p className="text-xs text-slate-400 leading-tight">
+                Estúdio de assinaturas HTML/VML & compilador Outlook.
+              </p>
+            </div>
+
+            {/* Node 4: Catalyst */}
             <div className="p-4 rounded-2xl bg-indigo-950/30 border border-indigo-500/30 hover:border-indigo-400/60 transition-all flex flex-col justify-between group">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[10px] font-mono font-semibold text-indigo-400 bg-indigo-500/20 px-2 py-0.5 rounded-full">
@@ -146,7 +162,7 @@ export const AboutGlassHubSection: React.FC = () => {
               </p>
             </div>
 
-            {/* Node 4: EventHorizon */}
+            {/* Node 5: EventHorizon */}
             <div className="p-4 rounded-2xl bg-blue-950/30 border border-blue-500/30 hover:border-blue-400/60 transition-all flex flex-col justify-between group">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[10px] font-mono font-semibold text-blue-400 bg-blue-500/20 px-2 py-0.5 rounded-full">
@@ -162,7 +178,7 @@ export const AboutGlassHubSection: React.FC = () => {
               </p>
             </div>
 
-            {/* Node 5: Nexus */}
+            {/* Node 6: Nexus */}
             <div className="p-4 rounded-2xl bg-fuchsia-950/30 border border-fuchsia-500/30 hover:border-fuchsia-400/60 transition-all flex flex-col justify-between group">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[10px] font-mono font-semibold text-fuchsia-400 bg-fuchsia-500/20 px-2 py-0.5 rounded-full">
@@ -178,7 +194,7 @@ export const AboutGlassHubSection: React.FC = () => {
               </p>
             </div>
 
-            {/* Node 6: Nebula */}
+            {/* Node 7: Nebula */}
             <div className="p-4 rounded-2xl bg-emerald-950/30 border border-emerald-500/30 hover:border-emerald-400/60 transition-all flex flex-col justify-between group">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[10px] font-mono font-semibold text-emerald-400 bg-emerald-500/20 px-2 py-0.5 rounded-full">

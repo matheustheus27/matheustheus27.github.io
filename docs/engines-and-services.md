@@ -120,7 +120,7 @@ The GlassHub Quasar repository provides serverless Next.js App Router edge endpo
 | :--- | :--- | :--- |
 | `/api/badge` | Glassmorphic Tech & Social Badges | `label`, `value`, `icon`, `theme`, `glow` |
 | `/api/table` | Architecture & Tech Stack Tables | `title`, `columns`, `rows`, `theme` |
-| `/api/logo` | Animated Ecosystem Logos | `project` (`portal`, `quasar`, `pulsar`, `catalyst`, `eventhorizon`, `nexus`, `nebula`), `animated`, `width`, `height` |
+| `/api/logo` | Animated Ecosystem Logos | `project` (`portal`, `quasar`, `pulsar`, `prism`, `catalyst`, `eventhorizon`, `nexus`, `nebula`), `animated`, `width`, `height` |
 | `/api/stats` | GitHub Profile Telemetry | `username`, `show_icons`, `hide_rank`, `theme` |
 | `/api/top-langs` | Most Used Languages Chart | `username`, `layout` (`bars`, `compact`, `donut`), `limit` |
 | `/api/streak` | Contribution Activity Streak | `username`, `glow`, `theme` |
@@ -135,7 +135,7 @@ The GlassHub Quasar repository provides serverless Next.js App Router edge endpo
 - **Languages:** `typescript`, `javascript`, `python`, `rust`, `go`, `java`, `php`, `kotlin`, `csharp`, `cpp`.
 - **Frameworks:** `react`, `nextjs`, `vue`, `angular`, `svelte`, `tailwind`, `nodejs`.
 - **Socials:** `github`, `linkedin`, `instagram`, `email`, `discord`, `youtube`, `twitter`.
-- **Ecosystem:** `glasshub`, `glasshubquasar`, `glasshubpulsar`, `glasshubcatalyst`, `glasshubnexus`, `glasshubnebula`, `glasshubeventhorizon`.
+- **Ecosystem:** `glasshub`, `glasshubquasar`, `glasshubpulsar`, `glasshubprism`, `glasshubcatalyst`, `glasshubnexus`, `glasshubnebula`, `glasshubeventhorizon`.
 
 ---
 

@@ -119,7 +119,7 @@ GlassHub/
 
 ## 🌟 Connected Ecosystem Projects
 
-![GlassHub Widget](https://glasshub-quasar.vercel.app/api/table?title=Connected+Ecosystem+Projects&columns=Project%2CDescription%2CCore+Stack%2CRepository&rows=GlassHub+Pulsar%2CModern+resume+builder+with+live+PDF+export%2CReact+%2B+TS+%2B+Tailwind%2CGitHub%3BGlassHub+Quasar%2CAutonomous+telemetry+%26+SVG+metrics+engine%2CTypeScript+%2B+Edge+API%2CGitHub%3BGlassHub+Catalyst%2CMultilanguage+CLI+engine+for+web+%26+PDF+docs%2CShell+%2B+PowerShell%2CGitHub%3BGlassHub+EventHorizon%2CHigh-throughput+cosmic+stream+processing%2CC%23+%2B+.NET+%2B+Direct+I%2FO%2CGitHub%3BGlassHub+Nexus%2CDecentralized+P2P+high-privacy+messenger%2CKotlin+%2B+Android%2CGitHub%3BGlassHub+Nebula%2CNative+Windows+graphics+engine+%26+pipelines%2CC%2B%2B+%2B+DirectX%2CGitHub&theme=glass-dark&width=820&col_widths=22,42,24,12)
+![GlassHub Projects](https://glasshub-quasar.vercel.app/api/table?title=Connected+Ecosystem+Projects&columns=Project%2CDescription%2CCore+Stack%2CRepository&rows=GlassHub+Pulsar%2CModern+resume+builder+with+live+PDF+export%2CReact+%2B+TS+%2B+Tailwind%2CGitHub%3BGlassHub+Quasar%2CAutonomous+telemetry+%26+SVG+metrics+engine%2CTypeScript+%2B+Edge+API%2CGitHub%3BGlassHub+Prism%2CHTML+email+signature+studio+%26+VML+compiler%2CReact+%2B+TS+%2B+Tailwind%2CGitHub%3BGlassHub+Catalyst%2CMultilanguage+CLI+engine+for+web+%26+PDF+docs%2CShell+%2B+PowerShell%2CGitHub%3BGlassHub+EventHorizon%2CHigh-throughput+cosmic+stream+processing%2CC%23+%2B+.NET+%2B+Direct+I%2FO%2CGitHub%3BGlassHub+Nexus%2CDecentralized+P2P+high-privacy+messenger%2CKotlin+%2B+Android%2CGitHub%3BGlassHub+Nebula%2CNative+Windows+graphics+engine+%26+pipelines%2CC%2B%2B+%2B+DirectX%2CGitHub&theme=glass-dark&width=820&col_widths=22,42,24,12)
 
 ---
 

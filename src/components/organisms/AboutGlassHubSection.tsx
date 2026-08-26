@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Boxes, ShieldCheck, Sparkles, Eye, ArrowRight, Check, Flame, Atom, Monitor, Mail } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Boxes, ShieldCheck, Sparkles, Eye, ArrowRight, Check, Flame, Atom, Monitor, Mail, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Heading } from '../atoms/Heading';
 import { Text } from '../atoms/Text';
 import { Badge } from '../atoms/Badge';
@@ -11,7 +11,15 @@ import { useLanguage } from '../../context/LanguageContext';
 export const AboutGlassHubSection: React.FC = () => {
   const { t } = useLanguage();
   const [isVisionModalOpen, setIsVisionModalOpen] = useState(false);
+  const ecosystemScrollRef = useRef<HTMLDivElement>(null);
   const aboutHub = t.aboutGlassHub;
+
+  const scrollEcosystem = (direction: 'left' | 'right') => {
+    if (ecosystemScrollRef.current) {
+      const scrollAmount = direction === 'left' ? -280 : 280;
+      ecosystemScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   const getPillarIcon = (id: string) => {
     const props = { className: 'w-6 h-6 text-cyan-300' };
@@ -80,9 +88,9 @@ export const AboutGlassHubSection: React.FC = () => {
           </GlassCard>
         </div>
 
-        {/* GlassHub Interactive Ecosystem Blueprint Diagram */}
+        {/* GlassHub Interactive Ecosystem Blueprint Diagram & Gallery */}
         <div className="max-w-5xl mx-auto mb-16 p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-white/10 backdrop-blur-xl relative overflow-hidden">
-          <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
             <div>
               <Badge variant="violet" dot size="sm" className="mb-1">
                 Ecosystem Blueprint
@@ -91,123 +99,162 @@ export const AboutGlassHubSection: React.FC = () => {
                 Arquitetura Integrada do Ecossistema GlassHub
               </Heading>
             </div>
-            <span className="text-xs text-slate-400 font-mono hidden sm:inline-block">
-              7 Módulos Autônomos & Desacoplados
-            </span>
+            <div className="flex items-center gap-3">
+              <span className="text-xs text-slate-400 font-mono hidden sm:inline-block">
+                7 Módulos Autônomos & Desacoplados
+              </span>
+              <div className="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => scrollEcosystem('left')}
+                  className="p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 text-slate-300 hover:text-white transition-all active:scale-95 cursor-pointer"
+                  aria-label="Anterior"
+                  title="Anterior"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => scrollEcosystem('right')}
+                  className="p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 text-slate-300 hover:text-white transition-all active:scale-95 cursor-pointer"
+                  aria-label="Próximo"
+                  title="Próximo"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
           </div>
 
-          {/* Interactive Nodes Flow Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-7 gap-4 relative z-10">
+          {/* Horizontal Scroll Gallery */}
+          <div
+            ref={ecosystemScrollRef}
+            className="flex gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent scroll-smooth relative z-10"
+          >
             {/* Node 1: Pulsar */}
-            <div className="p-4 rounded-2xl bg-cyan-950/30 border border-cyan-500/30 hover:border-cyan-400/60 transition-all flex flex-col justify-between group">
-              <div className="flex items-center justify-between mb-2">
+            <div className="flex-none w-[230px] sm:w-[250px] snap-start p-4 rounded-2xl bg-cyan-950/30 border border-cyan-500/30 hover:border-cyan-400/60 transition-all flex flex-col justify-between group">
+              <div className="flex items-center justify-between mb-3">
                 <span className="text-[10px] font-mono font-semibold text-cyan-400 bg-cyan-500/20 px-2 py-0.5 rounded-full">
                   WEB UI
                 </span>
-                <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
+                <Sparkles className="w-4 h-4 text-cyan-300" />
               </div>
-              <h4 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors mb-1">
-                GlassHub Pulsar
-              </h4>
-              <p className="text-xs text-slate-400 leading-tight">
-                Preview dinâmico em tempo real & exportação vetorial PDF.
-              </p>
+              <div>
+                <h4 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors mb-1">
+                  GlassHub Pulsar
+                </h4>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Preview dinâmico em tempo real & exportação vetorial PDF.
+                </p>
+              </div>
             </div>
 
             {/* Node 2: Quasar */}
-            <div className="p-4 rounded-2xl bg-purple-950/30 border border-purple-500/30 hover:border-purple-400/60 transition-all flex flex-col justify-between group">
-              <div className="flex items-center justify-between mb-2">
+            <div className="flex-none w-[230px] sm:w-[250px] snap-start p-4 rounded-2xl bg-purple-950/30 border border-purple-500/30 hover:border-purple-400/60 transition-all flex flex-col justify-between group">
+              <div className="flex items-center justify-between mb-3">
                 <span className="text-[10px] font-mono font-semibold text-purple-400 bg-purple-500/20 px-2 py-0.5 rounded-full">
                   METRICS
                 </span>
-                <Atom className="w-3.5 h-3.5 text-purple-300" />
+                <Atom className="w-4 h-4 text-purple-300" />
               </div>
-              <h4 className="text-sm font-bold text-white group-hover:text-purple-300 transition-colors mb-1">
-                GlassHub Quasar
-              </h4>
-              <p className="text-xs text-slate-400 leading-tight">
-                Motor de estatísticas & telemetria em tempo real.
-              </p>
+              <div>
+                <h4 className="text-sm font-bold text-white group-hover:text-purple-300 transition-colors mb-1">
+                  GlassHub Quasar
+                </h4>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Motor de estatísticas & telemetria em tempo real.
+                </p>
+              </div>
             </div>
 
             {/* Node 3: Prism */}
-            <div className="p-4 rounded-2xl bg-violet-950/30 border border-violet-500/30 hover:border-violet-400/60 transition-all flex flex-col justify-between group">
-              <div className="flex items-center justify-between mb-2">
+            <div className="flex-none w-[230px] sm:w-[250px] snap-start p-4 rounded-2xl bg-violet-950/30 border border-violet-500/30 hover:border-violet-400/60 transition-all flex flex-col justify-between group">
+              <div className="flex items-center justify-between mb-3">
                 <span className="text-[10px] font-mono font-semibold text-violet-400 bg-violet-500/20 px-2 py-0.5 rounded-full">
                   EMAIL VML
                 </span>
-                <Mail className="w-3.5 h-3.5 text-violet-300" />
+                <Mail className="w-4 h-4 text-violet-300" />
               </div>
-              <h4 className="text-sm font-bold text-white group-hover:text-violet-300 transition-colors mb-1">
-                GlassHub Prism
-              </h4>
-              <p className="text-xs text-slate-400 leading-tight">
-                Estúdio de assinaturas HTML/VML & compilador Outlook.
-              </p>
+              <div>
+                <h4 className="text-sm font-bold text-white group-hover:text-violet-300 transition-colors mb-1">
+                  GlassHub Prism
+                </h4>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Estúdio de assinaturas HTML/VML & compilador Outlook.
+                </p>
+              </div>
             </div>
 
             {/* Node 4: Catalyst */}
-            <div className="p-4 rounded-2xl bg-indigo-950/30 border border-indigo-500/30 hover:border-indigo-400/60 transition-all flex flex-col justify-between group">
-              <div className="flex items-center justify-between mb-2">
+            <div className="flex-none w-[230px] sm:w-[250px] snap-start p-4 rounded-2xl bg-indigo-950/30 border border-indigo-500/30 hover:border-indigo-400/60 transition-all flex flex-col justify-between group">
+              <div className="flex items-center justify-between mb-3">
                 <span className="text-[10px] font-mono font-semibold text-indigo-400 bg-indigo-500/20 px-2 py-0.5 rounded-full">
                   CLI & DOCS
                 </span>
-                <Boxes className="w-3.5 h-3.5 text-indigo-300" />
+                <Boxes className="w-4 h-4 text-indigo-300" />
               </div>
-              <h4 className="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors mb-1">
-                GlassHub Catalyst
-              </h4>
-              <p className="text-xs text-slate-400 leading-tight">
-                Geração CLI de documentações Web (Py/PHP/JS) & PDF.
-              </p>
+              <div>
+                <h4 className="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors mb-1">
+                  GlassHub Catalyst
+                </h4>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Geração CLI de documentações Web (Py/PHP/JS) & PDF.
+                </p>
+              </div>
             </div>
 
             {/* Node 5: EventHorizon */}
-            <div className="p-4 rounded-2xl bg-blue-950/30 border border-blue-500/30 hover:border-blue-400/60 transition-all flex flex-col justify-between group">
-              <div className="flex items-center justify-between mb-2">
+            <div className="flex-none w-[230px] sm:w-[250px] snap-start p-4 rounded-2xl bg-blue-950/30 border border-blue-500/30 hover:border-blue-400/60 transition-all flex flex-col justify-between group">
+              <div className="flex items-center justify-between mb-3">
                 <span className="text-[10px] font-mono font-semibold text-blue-400 bg-blue-500/20 px-2 py-0.5 rounded-full">
                   C# STREAMS
                 </span>
-                <Flame className="w-3.5 h-3.5 text-blue-300" />
+                <Flame className="w-4 h-4 text-blue-300" />
               </div>
-              <h4 className="text-sm font-bold text-white group-hover:text-blue-300 transition-colors mb-1">
-                GlassHub EventHorizon
-              </h4>
-              <p className="text-xs text-slate-400 leading-tight">
-                Processamento contínuo em streams I/O nativas.
-              </p>
+              <div>
+                <h4 className="text-sm font-bold text-white group-hover:text-blue-300 transition-colors mb-1">
+                  GlassHub EventHorizon
+                </h4>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Processamento contínuo em streams I/O nativas.
+                </p>
+              </div>
             </div>
 
             {/* Node 6: Nexus */}
-            <div className="p-4 rounded-2xl bg-fuchsia-950/30 border border-fuchsia-500/30 hover:border-fuchsia-400/60 transition-all flex flex-col justify-between group">
-              <div className="flex items-center justify-between mb-2">
+            <div className="flex-none w-[230px] sm:w-[250px] snap-start p-4 rounded-2xl bg-fuchsia-950/30 border border-fuchsia-500/30 hover:border-fuchsia-400/60 transition-all flex flex-col justify-between group">
+              <div className="flex items-center justify-between mb-3">
                 <span className="text-[10px] font-mono font-semibold text-fuchsia-400 bg-fuchsia-500/20 px-2 py-0.5 rounded-full">
                   KOTLIN P2P
                 </span>
-                <ShieldCheck className="w-3.5 h-3.5 text-fuchsia-300" />
+                <ShieldCheck className="w-4 h-4 text-fuchsia-300" />
               </div>
-              <h4 className="text-sm font-bold text-white group-hover:text-fuchsia-300 transition-colors mb-1">
-                GlassHub Nexus
-              </h4>
-              <p className="text-xs text-slate-400 leading-tight">
-                Mensageiro descentralizado & privacidade Android.
-              </p>
+              <div>
+                <h4 className="text-sm font-bold text-white group-hover:text-fuchsia-300 transition-colors mb-1">
+                  GlassHub Nexus
+                </h4>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Mensageiro descentralizado & privacidade Android.
+                </p>
+              </div>
             </div>
 
             {/* Node 7: Nebula */}
-            <div className="p-4 rounded-2xl bg-emerald-950/30 border border-emerald-500/30 hover:border-emerald-400/60 transition-all flex flex-col justify-between group">
-              <div className="flex items-center justify-between mb-2">
+            <div className="flex-none w-[230px] sm:w-[250px] snap-start p-4 rounded-2xl bg-emerald-950/30 border border-emerald-500/30 hover:border-emerald-400/60 transition-all flex flex-col justify-between group">
+              <div className="flex items-center justify-between mb-3">
                 <span className="text-[10px] font-mono font-semibold text-emerald-400 bg-emerald-500/20 px-2 py-0.5 rounded-full">
                   C++ / DIRECTX
                 </span>
-                <Monitor className="w-3.5 h-3.5 text-emerald-300" />
+                <Monitor className="w-4 h-4 text-emerald-300" />
               </div>
-              <h4 className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors mb-1">
-                GlassHub Nebula
-              </h4>
-              <p className="text-xs text-slate-400 leading-tight">
-                Motor gráfico Windows & pipelines acelerados.
-              </p>
+              <div>
+                <h4 className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors mb-1">
+                  GlassHub Nebula
+                </h4>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Motor gráfico Windows & pipelines acelerados.
+                </p>
+              </div>
             </div>
           </div>
         </div>

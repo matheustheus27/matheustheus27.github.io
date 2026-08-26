@@ -16,16 +16,16 @@
     <img src="https://glasshub-quasar.vercel.app/api/badge?label=Tailwind%20CSS&value=v3.4&icon=tailwind&url=https%3A%2F%2Ftailwindcss.com%2Fdocs&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="Tailwind CSS" />
   </a>
   <a href="https://motion.dev/docs" target="_blank" rel="noopener noreferrer">
-    <img src="https://glasshub-quasar.vercel.app/api/badge?label=Framer%20Motion&value=v12&icon=sparkles&url=https%3A%2F%2Fmotion.dev%2Fdocs&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="Framer Motion" />
+    <img src="https://glasshub-quasar.vercel.app/api/badge?label=Framer%20Motion&value=v12&icon=motion&url=https%3A%2F%2Fmotion.dev%2Fdocs&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="Framer Motion" />
   </a>
   <a href="https://lucide.dev/guide/" target="_blank" rel="noopener noreferrer">
-    <img src="https://glasshub-quasar.vercel.app/api/badge?label=Lucide%20Icons&value=v1.16&icon=sparkles&url=https%3A%2F%2Flucide.dev%2Fguide%2F&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="Lucide Icons" />
+    <img src="https://glasshub-quasar.vercel.app/api/badge?label=Lucide%20Icons&value=v1.16&icon=icons&url=https%3A%2F%2Flucide.dev%2Fguide%2F&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="Lucide Icons" />
   </a>
   <a href="https://github.com/soldair/node-qrcode" target="_blank" rel="noopener noreferrer">
-    <img src="https://glasshub-quasar.vercel.app/api/badge?label=QR%20Engine&value=QRCode.js&icon=gear&url=https%3A%2F%2Fgithub.com%2Fsoldair%2Fnode-qrcode&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="QR Engine" />
+    <img src="https://glasshub-quasar.vercel.app/api/badge?label=QR%20Engine&value=QRCode.js&icon=qrcode&url=https%3A%2F%2Fgithub.com%2Fsoldair%2Fnode-qrcode&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="QR Engine" />
   </a>
   <a href="./LICENSE">
-    <img src="https://glasshub-quasar.vercel.app/api/badge?label=License&value=MIT&icon=sparkles&url=.%2FLICENSE&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="License" />
+    <img src="https://glasshub-quasar.vercel.app/api/badge?label=License&value=MIT&icon=license&url=.%2FLICENSE&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="License" />
   </a>
 </p>
 

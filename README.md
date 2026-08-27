@@ -25,7 +25,7 @@
     <img src="https://glasshub-quasar.vercel.app/api/badge?label=QR%20Engine&value=QRCode.js&icon=qrcode&url=https%3A%2F%2Fgithub.com%2Fsoldair%2Fnode-qrcode&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="QR Engine" />
   </a>
   <a href="./LICENSE">
-    <img src="https://glasshub-quasar.vercel.app/api/badge?label=License&value=MIT&icon=license&url=.%2FLICENSE&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="License" />
+    <img src="https://glasshub-quasar.vercel.app/api/badge?label=License&value=Proprietary&icon=license&url=.%2FLICENSE&shape=rounded&style=glass&glow=true&theme=glass-dark" alt="License" />
   </a>
 </p>
 
@@ -184,5 +184,5 @@ Developed with 💙 by **Matheus Ferreira** — *Software Engineer & Computer En
 ---
 
 <div align="center">
-  <sub>Forged Open Source under the Proprietary License • GlassHub Ecosystem © 2026</sub>
+  <sub>Forged under the Source-Available License • GlassHub Ecosystem © 2026</sub>
 </div>

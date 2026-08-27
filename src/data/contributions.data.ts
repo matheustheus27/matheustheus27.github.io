@@ -183,10 +183,10 @@ export const glassHubPillarsPt: PlatformPillarDetail[] = [
   {
     id: 'code-transparency',
     title: 'Transparência Radical em Código',
-    badge: 'Open Source',
+    badge: 'Source Available License',
     summary: 'Todo o ecossistema é aberto, translúcido como o vidro e auditável.',
     detailedPoints: [
-      'Repositórios públicos no GitHub com licenças abertas para toda a comunidade.',
+      'Repositórios públicos no GitHub com licença aberta para estudos e modificações para projetos pessoais (não comerciais).',
       'Documentação arquitetural explicando as decisões técnicas e padrões adotados.',
       'Métricas reais de consumo de memória, CPU e benchmarks de latência.',
     ],
@@ -230,10 +230,10 @@ export const glassHubPillarsEn: PlatformPillarDetail[] = [
   {
     id: 'code-transparency',
     title: 'Radical Code Transparency',
-    badge: 'Open Source',
+    badge: 'Source Available License',
     summary: 'The entire ecosystem is open, translucent like glass, and fully auditable.',
     detailedPoints: [
-      'Public GitHub repositories with open licenses for the whole community.',
+      'Public GitHub repositories with open license for study and modification for personal projects (non-commercial) for the whole community.',
       'Architectural documentation detailing design decisions and patterns.',
       'Real-world benchmarks measuring memory overhead, CPU cycles, and latency.',
     ],

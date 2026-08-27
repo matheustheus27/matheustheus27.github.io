@@ -184,5 +184,5 @@ Developed with 💙 by **Matheus Ferreira** — *Software Engineer & Computer En
 ---
 
 <div align="center">
-  <sub>Forged under the MIT License with Non-Commercial Reservation • GlassHub Ecosystem © 2026</sub>
+  <sub>Forged Open Source under the Proprietary License • GlassHub Ecosystem © 2026</sub>
 </div>
